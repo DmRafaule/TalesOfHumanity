@@ -1,0 +1,39 @@
+.row_container{
+    display: flex;
+    flex-direction: row;
+}
+.column_container{
+    display: flex;
+    flex-direction: column;
+}
+.column_container_element{
+    flex: 0 0 auto;
+}
+
+.row_container_element{
+    flex: 0 0 auto;
+}
+
+.row_container_element__expanding{
+    flex: 1 0 auto;
+}
+
+.column_container_element{
+    flex: 0 0 auto;
+}
+
+.column_container_element__expanding{
+    flex: 1 0 auto;
+}
+.container--paddings{
+    padding: 10px;
+}
+.container--margins{
+    margin: 10px;
+}
+.container__row--margins{
+    margin-right: 10px;
+}
+.container__column--margins{
+    margin-bottom: 10px;
+}

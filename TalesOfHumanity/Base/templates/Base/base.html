@@ -12,10 +12,19 @@
     {% endblock %}
 </head>
 <body>
-    <p>Base</p>    
-    <!-- Block of code for apps content-->
-    {% block body %}
-    {% endblock %}
+    <div class="wrapper row_container border">
+        <div class="row_container_element container--paddings border">
+            Боковое меню
+        </div>
+        <div class="column_container row_container_element__expanding border">
+            <div class="column_container_element container--paddings border">Навигационная строка</div>
+            <div class="column_container_element__expanding container--paddings border">
+                <!-- Block of code for apps content-->
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
     <script src="{% static 'Base/js/base.js' %}"></script>
     <!-- Block of code for apps scripts-->
     {% block script_block %}
