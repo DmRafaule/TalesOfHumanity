@@ -1,0 +1,14 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+
+{% block header %}
+    <link type="text/css" rel="stylesheet" href="{% static 'Viewer/css/viewer.css' %}"/>
+{% endblock %}
+
+{% block body %}
+    <p>Viewer</p>
+{% endblock %}
+
+{% block script_block %}
+    <script src="{% static 'Viewer/js/viewer.js' %}"></script>
+{% endblock %}
