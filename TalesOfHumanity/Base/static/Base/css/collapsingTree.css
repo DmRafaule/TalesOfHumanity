@@ -1,0 +1,45 @@
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: none;
+} 
+
+.collapsing_tree{
+
+}
+
+.collapsing_tree__element{
+  padding: 5px;
+  padding-left: 10px;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: inherit;
+  transition: letter-spacing 0.3s;
+}
+
+.collapsing_tree__element:hover{
+  letter-spacing: 3px;
+}
+
+.collapsing_tree__element > a{
+ text-decoration: none;
+ color: black;
+}
+
+.collapsing_tree__toggler{
+  padding: 5px;
+  padding-left: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.collapsing_tree__toggler_header{
+  padding-left: 0px;
+}
+
+.collapsing_tree__toggler_body{
+}
+
+.collapsing_tree__side_image{
+  width: 16px;
+  margin: 5px;
+}

@@ -1,0 +1,30 @@
+.navigation_footer__collapse_button{
+    position: absolute;
+    bottom: 0px;
+    left: 300px;
+    transition: left 0.5s;
+}
+
+.navigation_path__collapse_button{
+    position: absolute;
+    top: 32px;
+    right: 0px;
+    transition: top 0.5s;
+}
+
+
+.button{
+    cursor: pointer;
+}
+
+
+.button > img{
+    width: 32px;
+    scale: 1;
+    z-index: 1;
+    transition: scale 0.5s;
+}
+
+.button > img:hover{
+    scale: 1.2;
+}

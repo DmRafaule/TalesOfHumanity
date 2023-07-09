@@ -5,6 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap">
     <link type="text/css" rel="stylesheet" href="{% static 'Base/css/base.css' %}"/>
     <title>Сказки человечества</title>
     <!-- Block of code for apps headers-->
@@ -13,11 +16,121 @@
 </head>
 <body>
     <div class="wrapper row_container border">
-        <div class="row_container_element container--paddings border">
-            Боковое меню
+        <div id="navigation" class="navigation column_container row_container_element container--paddings  border">
+            <div class="navigation_title column_container_element container__column--margins border">Сказки человечества</div>
+            <div class="navigation_body column_container_element__expanding container__column--margins container--paddings border">
+                <div id="articles" class="navigation_body__element container__column--margins border">
+                    <!-- START Collapsing tree root -->
+                    <div class="collapsing_tree">
+                        <!-- START Toggler of collapsing tree -->
+                        <div class="collapsing_tree__toggler border">
+                            <div class="collapsing_tree__toggler_header collapsing_tree__element border">
+                                <img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.png' %}" alt="image for toggle list, folder">
+                                <span>Статьи</span>
+                            </div>
+                            <div class="collapsing_tree__toggler_body">
+                                <!-- START Element of collapsing tree-->
+                                <div class="collapsing_tree__element border">
+                                    <a href="#">
+                                        <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
+                                        <span>Легенды</span>
+                                    </a>
+                                </div>
+                                <!-- END Element of collapsing tree-->
+                                <!-- START Element of collapsing tree-->
+                                <div class="collapsing_tree__element border">
+                                    <a href="#">
+                                        <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
+                                        <span>Истории</span>
+                                    </a>
+                                </div>
+                                <!-- END Element of collapsing tree-->
+                                <!-- START Element of collapsing tree-->
+                                <div class="collapsing_tree__element border">
+                                    <a href="#">
+                                        <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
+                                        <span>Сказки</span>
+                                    </a>
+                                </div>
+                                <!-- END Element of collapsing tree-->
+                                <!-- START Toggler of collapsing tree -->
+                                <div class="collapsing_tree__toggler border">
+                                    <div class="collapsing_tree__toggler_header  collapsing_tree__element ">
+                                        <img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.png' %}" alt="image for toggle list, folder">
+                                        <span>SCP Документы</span>
+                                    </div>
+                                    <div class="collapsing_tree__toggler_body">
+                                        <!-- START Element of collapsing tree-->
+                                        <div class="collapsing_tree__element border">
+                                            <a href="#">
+                                                <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
+                                                <span>633</span>
+                                            </a>
+                                        </div>
+                                        <!-- END Element of collapsing tree-->
+                                        <!-- START Element of collapsing tree-->
+                                        <div class="collapsing_tree__element border">
+                                            <a href="#">
+                                                <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
+                                                <span>507</span>
+                                            </a>
+                                        </div>
+                                        <!-- END Element of collapsing tree-->
+                                        
+                                    </div>
+                                </div>
+                                <!-- END Toggler of collapsing tree -->
+                            </div>
+                        </div>
+                        <!-- END Toggler of collapsing tree -->
+                    </div>
+                    <!-- End Collapsing tree root -->
+                </div>
+                <div id="about" class="navigation_body__element container__column--margins border">Об проекте</div>
+            </div>
+            <div class="navigation_footer row_container column_container_element container__column--margins container--paddings border">
+                <div id="navigation_footer__language_switcher" class="button navigation_footer__element row_container_element container__row--margins border">
+                    <img src="{% static 'Base/img/button_holder.png' %}" alt="Place holder for button">
+                </div>
+                <!-- START Language list-->
+                <div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins border">
+                    <img src="{% static 'Base/img/button_holder.png' %}" alt="Place holder for button">
+                </div>
+                <div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins border">
+                    <img src="{% static 'Base/img/button_holder.png' %}" alt="Place holder for button">
+                </div>
+                <div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins border">
+                    <img src="{% static 'Base/img/button_holder.png' %}" alt="Place holder for button">
+                </div>
+                <!-- END Language list-->
+                <div id="navigation_footer__theme_switcher" class="button navigation_footer__element row_container_element container__row--margins border">
+                    <img id="navigation_footer__theme_switcher__img" src="{% static 'Base/img/button_holder.png' %}" alt="Place holder for button">
+                </div>
+                <!-- START Themes list-->
+                <div id="navigation_footer__theme_choise" class="button navigation_footer__element row_container_element container__row--margins border">
+                    <img src="{% static 'Base/img/button_holder.png' %}" alt="light" >
+                </div>
+                <div id="navigation_footer__theme_choise" class="button navigation_footer__element row_container_element container__row--margins border">
+                    <img src="{% static 'Base/img/button_holder.png' %}" alt="dark">
+                </div>
+                <!-- END Theme list -->
+                <div id="navigation_footer__collapse_all" class="button navigation_footer__element row_container_element container__row--margins border">
+                    <img src="{% static 'Base/img/button_holder.png' %}" alt="Place holder for button">
+                </div>
+            </div>
         </div>
-        <div class="column_container row_container_element__expanding border">
-            <div class="column_container_element container--paddings border">Навигационная строка</div>
+        <!--Button to collapse navigation element (on side)-->
+        <div id="navigation_footer__collapse_button" class="button navigation_footer__collapse_button container__row--margins border">
+            <img src="{% static 'Base/img/button_holder.png' %}" alt="Place holder for button">
+        </div>
+        <div id="navigation_path__container" class="column_container row_container_element__expanding border">
+            <div id="navigation_path" class="navigation_path row_container column_container_element  border">
+                <div class="navigation_path__text row_container_element__expanding  container__row--margins border">Навигационный путь</div>
+            </div>
+            <!--Button to collapse navigation_path element(on top)-->
+            <div id="navigation_path__collapse_button" class="button navigation_path__collapse_button border">
+                <img src="{% static 'Base/img/button_holder.png' %}" alt="Place holder for button">
+            </div>
             <div class="column_container_element__expanding container--paddings border">
                 <!-- Block of code for apps content-->
                 {% block body %}
@@ -25,7 +138,12 @@
             </div>
         </div>
     </div>
+    <!-- This is for knowing where to look for an images-->
+    <script>
+        var PATH = "{% static .%}"
+    </script>
     <script src="{% static 'Base/js/base.js' %}"></script>
+    <script src="{% static 'Base/js/collapsingTree.js' %}"></script>
     <!-- Block of code for apps scripts-->
     {% block script_block %}
     {% endblock %}
