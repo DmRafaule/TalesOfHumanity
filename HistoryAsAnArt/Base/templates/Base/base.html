@@ -17,7 +17,7 @@
 <body>
     <div id="wrapper" class="wrapper row_container">
         <div id="navigation" class="navigation column_container row_container_element container--paddings ">
-            <div class="navigation_title column_container_element container__column--margins ">История как Искуство. Главная.</div>
+            <div class="navigation_title column_container_element container__column--margins "><a href="{% url 'home' %}" >История как Искуство</a></div>
             <div class="navigation_body column_container_element__expanding container__column--margins container--paddings ">
                 <div id="articles" class="navigation_body__element container__column--margins">
                     <!-- START Collapsing tree root -->
@@ -88,7 +88,7 @@
                 </div>
                 <div id="about" class="navigation_body__element container__column--margins">
                     <img class="collapsing_tree__side_image" src="{% static 'Base/img/question.png' %}" alt="question mark">
-                    <span>Об проекте</span>
+                    <span><a href="{% url 'about' %}">Об проекте</a></span>
                 </div>
             </div>
             <div class="navigation_footer row_container column_container_element container__column--margins container--paddings ">

@@ -4,6 +4,7 @@ let collapseAll = document.getElementById('navigation_footer__collapse_all')
 let themeSwitcher = document.getElementById('navigation_footer__theme_switcher')
 let languageSwitcher = document.getElementById('navigation_footer__language_switcher')
 
+let theme = 'light'
 let isNavigationCollapsed = false
 let isNavigationPathCollapsed = false
 let isMobile = false
@@ -79,6 +80,8 @@ function RiseAllFooterButtons(){
 }
 
 function InitSite(){
+    theme = localStorage.getItem('theme')
+    SwitchTheme(theme)
     ResizeSite()
 }
 
@@ -102,10 +105,16 @@ function ResizeSite(){
 // SWITCH THEME BLOCK 
 
 function SwitchTheme(themeIdentificator) {// TODO change themes options
+    theme = themeIdentificator
+    localStorage.setItem('theme',theme)
     switch(themeIdentificator){
         case "light":
             document.getElementById('wrapper').style.color = 'black'
             document.getElementById('wrapper').style.backgroundColor = 'white'
+            var navigation = document.getElementById('navigation')
+            navigation.querySelectorAll('a').forEach(element => {
+                element.style.color = 'black'
+            })
             document.querySelectorAll('.collapsing_tree__element > a').forEach(element => {
                 element.style.color = 'black'
             })
@@ -113,6 +122,10 @@ function SwitchTheme(themeIdentificator) {// TODO change themes options
         case "dark":
             document.getElementById('wrapper').style.color = 'white'
             document.getElementById('wrapper').style.backgroundColor = 'black'
+            var navigation = document.getElementById('navigation')
+            navigation.querySelectorAll('a').forEach(element => {
+                element.style.color = 'white'
+            })
             document.querySelectorAll('.collapsing_tree__element > a').forEach(element => {
                 element.style.color = 'white'
             })

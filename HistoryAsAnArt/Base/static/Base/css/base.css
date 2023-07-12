@@ -53,6 +53,10 @@
     padding: 10px;
     margin: 20% 0 10% 0;
     transition: box-shadow 0.3s, -webkit-box-shadow 0.3s, -moz-box-shadow 0.3s;
+    cursor: pointer;
+}
+.navigation_title > a{
+    color: black;
 }
 .navigation_title:hover{
     box-shadow: -6px -3px 18px 6px rgba(0,0,0,0.75);
@@ -67,6 +71,9 @@
 
 
 .navigation_body__element{
+}
+.navigation_body__element > span > a{
+    color: black;
 }
 
 .collapsing_tree{
