@@ -1,0 +1,4 @@
+@keyframes move-toleft {
+    from {transform: translateX(0px);}
+    to {transform: translateX(-300px);}
+}

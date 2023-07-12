@@ -6,49 +6,63 @@ let languageSwitcher = document.getElementById('navigation_footer__language_swit
 
 let isNavigationCollapsed = false
 let isNavigationPathCollapsed = false
+let isMobile = false
 
 
 function CollapseNavigation() {
     isNavigationCollapsed = true
     let navigation = document.getElementById('navigation')
-    navigation.style.width = 0 + 'px'
-    navigation.style.padding = 0 + 'px'
-    collapseNavigation.style.left = 0 + 'px'
-    if (window.innerWidth <= 700)
-        navigation.style.display = 'none'
+    navigation.classList.add('navigation--hide')
+    collapseNavigation.classList.add('navigation_footer__collapse_button--flip')
+    collapseNavigation.classList.add('navigation_footer__collapse_button--collapsed')
+    if (isMobile){
+        let viewer = document.getElementById('navigation_path__container')
+        viewer.style.display = "flex"
+        navigation.classList.replace('navigation--toreplace','navigation')
+        let wrapper = document.getElementById('wrapper')
+        wrapper.classList.replace('wrapper--mobile','wrapper')
+    }
 }
 
 function RiseNavigation() {
     isNavigationCollapsed = false
     let navigation = document.getElementById('navigation')
-    navigation.style.display = 'flex'
-    navigation.style.width = 300 + 'px'
-    navigation.style.padding = 10 + 'px'
-    if (window.innerWidth <= 700)
-        collapseNavigation.style.left = Math.round((window.innerWidth - 32)) + 'px'
-    else
-        collapseNavigation.style.left = navigation.style.width
+    navigation.classList.remove('navigation--hide')
+    collapseNavigation.classList.remove('navigation_footer__collapse_button--flip')
+    collapseNavigation.classList.remove('navigation_footer__collapse_button--collapsed')
+    if (isMobile){
+        let viewer = document.getElementById('navigation_path__container')
+        viewer.style.display = "none"
+        navigation.classList.replace('navigation','navigation--toreplace')
+        let wrapper = document.getElementById('wrapper')
+        wrapper.classList.replace('wrapper','wrapper--mobile')
+    }
 }
 
 function CollapseNavigationPath() {
     isNavigationPathCollapsed = true 
     let navigationPath = document.getElementById('navigation_path')
-    navigationPath.style.height = 0 + 'px'
-    navigationPath.style.paddingLeft = 0 + 'px'
-    collapseNavigationPath.style.top = 0 + 'px'
+    navigationPath.classList.add('navigation_path--hide')
+    collapseNavigationPath.classList.add('navigation_path__collapse_button--flip')
+    collapseNavigationPath.classList.add('navigation_path__collapse_button--collapsed')
 }
 
 function RiseNavigationPath() {
     isNavigationPathCollapsed = false 
     let navigationPath = document.getElementById('navigation_path')
-    navigationPath.style.height = 32 + 'px' 
-    navigationPath.style.paddingLeft = 10 + 'px'
-    collapseNavigationPath.style.top = 32 + 'px'
+    navigationPath.classList.remove('navigation_path--hide')
+    collapseNavigationPath.classList.remove('navigation_path__collapse_button--flip')
+    collapseNavigationPath.classList.remove('navigation_path__collapse_button--collapsed')
 }
 
 function CollapseAll(){
     CollapseNavigation()
     CollapseNavigationPath()
+}
+
+function RiseAll(){
+    RiseNavigation()
+    RiseNavigationPath()
 }
 
 
@@ -64,20 +78,41 @@ function RiseAllFooterButtons(){
     collapseAll.style.display = 'block'
 }
 
+function InitSite(){
+    ResizeSite()
+}
+
+function ResizeSite(){
+    if (window.innerWidth < 710 ){
+        isNavigationCollapsed = true;
+        isNavigationPathCollapsed = true;
+        isMobile = true
+        collapseNavigationPath.style.display = 'none'
+        CollapseAll()
+    }
+    else{
+        isNavigationCollapsed = false;
+        isNavigationPathCollapsed = false;
+        isMobile = false
+        collapseNavigationPath.style.display = 'block'
+        RiseAll()
+    }
+}
+
 // SWITCH THEME BLOCK 
 
-function SwitchTheme(themeIdentificator) {
+function SwitchTheme(themeIdentificator) {// TODO change themes options
     switch(themeIdentificator){
         case "light":
-            document.querySelector('.wrapper').style.color = 'black'
-            document.querySelector('.wrapper').style.backgroundColor = 'white'
+            document.getElementById('wrapper').style.color = 'black'
+            document.getElementById('wrapper').style.backgroundColor = 'white'
             document.querySelectorAll('.collapsing_tree__element > a').forEach(element => {
                 element.style.color = 'black'
             })
             break
         case "dark":
-            document.querySelector('.wrapper').style.color = 'white'
-            document.querySelector('.wrapper').style.backgroundColor = 'black'
+            document.getElementById('wrapper').style.color = 'white'
+            document.getElementById('wrapper').style.backgroundColor = 'black'
             document.querySelectorAll('.collapsing_tree__element > a').forEach(element => {
                 element.style.color = 'white'
             })
@@ -142,14 +177,5 @@ themeSwitcher.addEventListener('click', ToggleThemeChooser )
 
 languageSwitcher.addEventListener('click', ToggleLanguageChooser )
 
-window.addEventListener('resize', e => {
-    let navigation = document.getElementById('navigation')
-    if (window.innerWidth <= 700){
-        collapseNavigation.style.left = Math.round((window.innerWidth - 32)) + 'px'
-        collapseAll.style.display = 'none'
-    }
-    else{
-        collapseNavigation.style.left = navigation.style.width
-        collapseAll.style.display = 'flex'
-    }
-})
+window.addEventListener('load', InitSite );
+window.addEventListener('resize', ResizeSite );

@@ -4,13 +4,13 @@
 			"path": "."
 		},
 		{
-			"path": "../DenChedr's Studio"
-		},
-		{
 			"path": "../FamouseWomen"
 		},
 		{
 			"path": "../KTebeNejno"
+		},
+		{
+			"path": "../MyBlog"
 		}
 	],
 	"settings": {}
