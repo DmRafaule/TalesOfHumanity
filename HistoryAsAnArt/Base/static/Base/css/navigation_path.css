@@ -1,0 +1,36 @@
+.navigation_path__container{
+    flex: 1 1 auto;
+}
+
+.navigation_path{
+    height: fit-content;
+    padding-left: 10px;
+    overflow: hidden;
+    transition: height 0.5s, padding-left 0.5s;
+	justify-content: space-between;
+}
+
+.navigation_path--hide{
+    height: 0px;
+    padding-left: 0px;
+}
+
+.navigation_path__text{
+    font-weight: 100;
+    align-self: center;
+	max-width: 50%;
+    overflow: hidden;
+}
+
+.navigation_path__text_element{
+
+}
+
+.navigation_path__text_element > p{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.navigation_path__text_element > b{
+
+}

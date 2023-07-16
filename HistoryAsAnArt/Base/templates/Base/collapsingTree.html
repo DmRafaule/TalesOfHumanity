@@ -1,0 +1,22 @@
+{% load static %}
+
+{% for category in categories%}
+    <div class="collapsing_tree__toggler">
+        {% csrf_token %}
+        <div id="collapsing_tree__toggler_header_{{category.id}}" class="collapsing_tree__toggler_header collapsing_tree__element" data-catid="{{category.id}}" data-catname="{{category.name}}">
+            <img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.png' %}" alt="image for toggle list, folder">
+            <span>{{category.name}}</span>
+        </div>
+		<div id="collapsing_tree__toggler_body_{{category.id}}" class="collapsing_tree__toggler_body active">
+        </div>
+    </div>
+{% endfor %}
+
+{% for article in articles %}
+	<div class="collapsing_tree__element">
+		<a href="#">
+			<img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
+			<span>{{ article.title }}</span>
+		</a>
+	</div>
+{% endfor %}

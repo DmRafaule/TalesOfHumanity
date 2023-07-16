@@ -13,7 +13,7 @@ class Article(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=50, db_index=True, unique=True, blank=False)
-    slug = models.SlugField(max_length=50, db_index=True, unique=True)
+    slug = models.SlugField(max_length=50, db_index=True, unique=True, blank=False)
     articles = models.ManyToManyField(Article, blank=True)
     subcategories = models.ManyToManyField('self', blank=True)
 

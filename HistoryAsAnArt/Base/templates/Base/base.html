@@ -22,67 +22,18 @@
                 <div id="articles" class="navigation_body__element container__column--margins">
                     <!-- START Collapsing tree root -->
                     <div class="collapsing_tree">
-                        <!-- START Toggler of collapsing tree -->
-                        <div class="collapsing_tree__toggler">
-                            <div class="collapsing_tree__toggler_header collapsing_tree__element">
-                                <img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.png' %}" alt="image for toggle list, folder">
-                                <span>Статьи</span>
+                        {% for category in categories%}
+                            {% if category.name == "Статьи" %}
+                            <div class="collapsing_tree__toggler">
+								<div id="collapsing_tree__toggler_header_{{category.id}}" class="collapsing_tree__toggler_header collapsing_tree__element" data-catid="{{category.id}}" data-catname="{{category.name}}">
+                                    <img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.png' %}" alt="image for toggle list, folder">
+                                    <span>{{category.name}}</span>
+                                </div>
+								<div id ="collapsing_tree__toggler_body_{{category.id}}" class="collapsing_tree__toggler_body active">
+                                </div>
                             </div>
-                            <div class="collapsing_tree__toggler_body">
-                                <!-- START Element of collapsing tree-->
-                                <div class="collapsing_tree__element">
-                                    <a href="#">
-                                        <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
-                                        <span>Легенды</span>
-                                    </a>
-                                </div>
-                                <!-- END Element of collapsing tree-->
-                                <!-- START Element of collapsing tree-->
-                                <div class="collapsing_tree__element">
-                                    <a href="#">
-                                        <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
-                                        <span>Истории</span>
-                                    </a>
-                                </div>
-                                <!-- END Element of collapsing tree-->
-                                <!-- START Element of collapsing tree-->
-                                <div class="collapsing_tree__element">
-                                    <a href="#">
-                                        <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
-                                        <span>Сказки</span>
-                                    </a>
-                                </div>
-                                <!-- END Element of collapsing tree-->
-                                <!-- START Toggler of collapsing tree -->
-                                <div class="collapsing_tree__toggler">
-                                    <div class="collapsing_tree__toggler_header  collapsing_tree__element ">
-                                        <img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.png' %}" alt="image for toggle list, folder">
-                                        <span>SCP Документы</span>
-                                    </div>
-                                    <div class="collapsing_tree__toggler_body">
-                                        <!-- START Element of collapsing tree-->
-                                        <div class="collapsing_tree__element">
-                                            <a href="#">
-                                                <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
-                                                <span>633</span>
-                                            </a>
-                                        </div>
-                                        <!-- END Element of collapsing tree-->
-                                        <!-- START Element of collapsing tree-->
-                                        <div class="collapsing_tree__element">
-                                            <a href="#">
-                                                <img class="collapsing_tree__side_image" src="{% static 'Base/img/script.png' %}" alt="image for toggle list, folder">
-                                                <span>507</span>
-                                            </a>
-                                        </div>
-                                        <!-- END Element of collapsing tree-->
-                                        
-                                    </div>
-                                </div>
-                                <!-- END Toggler of collapsing tree -->
-                            </div>
-                        </div>
-                        <!-- END Toggler of collapsing tree -->
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <!-- End Collapsing tree root -->
                 </div>
@@ -128,7 +79,16 @@
         </div>
         <div id="navigation_path__container" class="column_container row_container_element__expanding">
             <div id="navigation_path" class="navigation_path row_container column_container_element ">
-                <div class="navigation_path__text row_container_element__expanding  container__row--margins">Навигационный путь</div>
+                <div class="navigation_path__text row_container row_container_element__expanding  container__row--margins">
+					{% block navigation_path %}
+					<div class="navigation_path__text_element row_container">
+						<p>
+						Статьи 
+						</p>
+						<b>⟩</b>
+					</div>
+					{% endblock %}
+				</div>
                 <!--Button to collapse navigation_path element(on top)-->
                 <div id="navigation_path__collapse_button" class="button navigation_path__collapse_button">
                     <img src="{% static 'Base/img/collapse.png' %}" alt="Collapse to top arrow">
@@ -141,9 +101,14 @@
             </div>
         </div>
     </div>
-    <!-- This is for knowing where to look for an images-->
+    <!-- Loading jQuery For AJAX behaviour --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- This is for knowing where to look for an images 
+		 And csrf tokkent -->
+    {% csrf_token %}
     <script>
         var PATH = "{% static .%}"
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     </script>
     <script src="{% static 'Base/js/base.js' %}"></script>
     <script src="{% static 'Base/js/collapsingTree.js' %}"></script>
