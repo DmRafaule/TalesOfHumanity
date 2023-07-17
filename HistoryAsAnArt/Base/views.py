@@ -27,11 +27,4 @@ def navigation(request):
         'articles': cat.articles.all(),
         'categories': cat.subcategories.all().exclude(name=cat_paren_name),
     }
-    return render(request, 'Base/collapsingTree.html', context)
-
-
-def navigationPath(request):
-    pathList = None
-    if request.method == 'POST':
-        pathList = request.POST['pathList']
-    return render(request, 'Base/navigationPath.html', {'pathList': pathList})
+    return render(request, 'Base/navigation.html', context)

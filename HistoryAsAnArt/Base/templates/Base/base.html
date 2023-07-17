@@ -22,7 +22,7 @@
                 <div id="articles" class="navigation_body__element container__column--margins">
                     <!-- START Collapsing tree root -->
                     <div class="collapsing_tree">
-                        {% for category in categories%}
+                        {% for category in categories %}
                             {% if category.name == "Статьи" %}
                             <div class="collapsing_tree__toggler">
 								<div id="collapsing_tree__toggler_header_{{category.id}}" class="collapsing_tree__toggler_header collapsing_tree__element" data-catid="{{category.id}}" data-catname="{{category.name}}">
@@ -42,55 +42,48 @@
                     <span><a href="{% url 'about' %}">Об проекте</a></span>
                 </div>
             </div>
-            <div class="navigation_footer row_container column_container_element container__column--margins container--paddings ">
-                <div id="navigation_footer__language_switcher" class="button navigation_footer__element row_container_element container__row--margins">
-                    <img src="{% static 'Base/img/language.png' %}" alt="Language choises">
-                </div>
-                <!-- START Language list-->
-                <div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins">
-                    <img src="{% static 'Base/img/belarus.png' %}" alt="Belorusian flag">
-                </div>
-                <div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins">
-                    <img src="{% static 'Base/img/russia.png' %}" alt="Russian flag">
-                </div>
-                <div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins">
-                    <img src="{% static 'Base/img/english.png' %}" alt="English flag">
-                </div>
-                <!-- END Language list-->
-                <div id="navigation_footer__theme_switcher" class="button navigation_footer__element row_container_element container__row--margins">
-                    <img id="navigation_footer__theme_switcher__img" src="{% static 'Base/img/themes.png' %}" alt="Themes switcher">
-                </div>
-                <!-- START Themes list-->
-                <div id="navigation_footer__theme_choise" class="button navigation_footer__element row_container_element container__row--margins">
-                    <img src="{% static 'Base/img/sun.png' %}" alt="light" >
-                </div>
-                <div id="navigation_footer__theme_choise" class="button navigation_footer__element row_container_element container__row--margins">
-                    <img src="{% static 'Base/img/half-moon.png' %}" alt="dark">
-                </div>
-                <!-- END Theme list -->
-                <div id="navigation_footer__collapse_all" class="button navigation_footer__element row_container_element container__row--margins">
-                    <img src="{% static 'Base/img/maximize.png' %}" alt="Maximize viewer">
-                </div>
-            </div>
+			<!-- Place to paste navigation_footer -->
             <!--Button to collapse navigation element (on side)-->
-            <div id="navigation_footer__collapse_button" class="button navigation_footer__collapse_button container__row--margins ">
+            <div id="navigation_footer__collapse_button" class="button_simple navigation_footer__collapse_button container__row--margins ">
                 <img src="{% static 'Base/img/collapse.png' %}" alt="Collapse to left arrow">
             </div>
         </div>
         <div id="navigation_path__container" class="column_container row_container_element__expanding">
             <div id="navigation_path" class="navigation_path row_container column_container_element ">
-                <div class="navigation_path__text row_container row_container_element__expanding  container__row--margins">
-					{% block navigation_path %}
-					<div class="navigation_path__text_element row_container">
-						<p>
-						Статьи 
-						</p>
-						<b>⟩</b>
+                <div id="navigation_path__text" class="navigation_path__text row_container row_container_element__expanding  container__row--margins">
+				</div>
+				<div class="navigation_footer row_container column_container_element container__column--margins container--paddings ">
+					<div id="navigation_footer__language_switcher" class="button navigation_footer__element row_container_element container__row--margins">
+						<img src="{% static 'Base/img/language.png' %}" alt="Language choises">
 					</div>
-					{% endblock %}
+					<!-- START Language list-->
+					<div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins">
+						<img src="{% static 'Base/img/belarus.png' %}" alt="Belorusian flag">
+					</div>
+					<div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins">
+						<img src="{% static 'Base/img/russia.png' %}" alt="Russian flag">
+					</div>
+					<div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins">
+						<img src="{% static 'Base/img/english.png' %}" alt="English flag">
+					</div>
+					<!-- END Language list-->
+					<div id="navigation_footer__theme_switcher" class="button navigation_footer__element row_container_element container__row--margins">
+						<img id="navigation_footer__theme_switcher__img" src="{% static 'Base/img/themes.png' %}" alt="Themes switcher">
+					</div>
+					<!-- START Themes list-->
+					<div id="navigation_footer__theme_choise" class="button navigation_footer__element row_container_element container__row--margins">
+						<img src="{% static 'Base/img/sun.png' %}" alt="light" >
+					</div>
+					<div id="navigation_footer__theme_choise" class="button navigation_footer__element row_container_element container__row--margins">
+						<img src="{% static 'Base/img/half-moon.png' %}" alt="dark">
+					</div>
+					<!-- END Theme list -->
+					<div id="navigation_footer__collapse_all" class="button navigation_footer__element row_container_element container__row--margins">
+						<img src="{% static 'Base/img/maximize.png' %}" alt="Maximize viewer">
+					</div>
 				</div>
                 <!--Button to collapse navigation_path element(on top)-->
-                <div id="navigation_path__collapse_button" class="button navigation_path__collapse_button">
+                <div id="navigation_path__collapse_button" class="button_simple navigation_path__collapse_button">
                     <img src="{% static 'Base/img/collapse.png' %}" alt="Collapse to top arrow">
                 </div>
             </div>
@@ -111,7 +104,7 @@
         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     </script>
     <script src="{% static 'Base/js/base.js' %}"></script>
-    <script src="{% static 'Base/js/collapsingTree.js' %}"></script>
+    <script src="{% static 'Base/js/base_server.js' %}"></script>
     <!-- Block of code for apps scripts-->
     {% block script_block %}
     {% endblock %}

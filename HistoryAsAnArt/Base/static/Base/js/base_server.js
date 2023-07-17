@@ -1,8 +1,7 @@
 let togglers = document.getElementsByClassName("collapsing_tree__toggler_header");
-
+let pathList = []
 
 function ClickOnToggler(){
-	UpdateNavigationPath($(this).attr("data-catname"))
 	var parent_name = "Статьи"
 	catid = $(this).attr("data-catid");
 	// I found out this solution more easy to implement. Essentially we just looking for parent with the same attribute
@@ -35,9 +34,7 @@ function ClickOnToggler(){
 	});
 }
 
-function UpdateNavigationPath(name){
-	
-}
+
 
 $(document).ready(function(){
 	$(".collapsing_tree__toggler_header").one("click",ClickOnToggler);

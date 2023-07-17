@@ -2,11 +2,14 @@
 
 
 
+
 {% block navigation_path %}
-<div class="navigation_path__text_element row_container">
-	<p>
-	Статьи 
-	</p>
-	<b>⟩</b>
-</div>
+{% for element in pathList %}
+	<div class="navigation_path__text_element row_container">
+		<p>
+		{{ element }} 
+		</p>
+		<b>⟩</b>
+	</div>
+{% endfor %}
 {% endblock %}

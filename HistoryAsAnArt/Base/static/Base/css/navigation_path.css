@@ -3,11 +3,11 @@
 }
 
 .navigation_path{
-    height: fit-content;
+    max-height: min-content;
     padding-left: 10px;
     overflow: hidden;
     transition: height 0.5s, padding-left 0.5s;
-	justify-content: space-between;
+	justify-content: right;
 }
 
 .navigation_path--hide{
@@ -18,12 +18,13 @@
 .navigation_path__text{
     font-weight: 100;
     align-self: center;
-	max-width: 50%;
+	width: 100%;
     overflow: hidden;
 }
 
 .navigation_path__text_element{
-
+	max-height: 32px;
+	overflow:hidden;
 }
 
 .navigation_path__text_element > p{

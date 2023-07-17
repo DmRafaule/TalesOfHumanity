@@ -7,19 +7,10 @@
     bottom: inherit;
     transition: left 0.3s, bottom 0.3s;
     align-self: center;
-    border-top-right-radius: 30%;
-    border-top: 2px solid grey;
-    border-right: 2px solid grey;
     margin: 10px;
 }
 
 .navigation_footer__collapse_button--flip{
-    border-top-right-radius: 0px;
-    border-top: 0px solid grey;
-    border-right: 0px solid grey;
-    border-bottom-left-radius: 15px;
-    border-bottom: 2px solid grey;
-    border-left: 2px solid grey;
     transform: scale(-1);
 }
 
@@ -31,19 +22,10 @@
 
 .navigation_path__collapse_button{
     transition: top 0.5s;
-    border-bottom-left-radius: 15px;
-    border-bottom: 2px solid grey;
-    border-left: 2px solid grey;
     margin: 10px;
     transform: rotate(90deg);
 }
 .navigation_path__collapse_button--flip{
-    border-bottom-left-radius: 0px;
-    border-bottom: 0px solid grey;
-    border-left: 0px solid grey;
-    border-top-left-radius: 15px;
-    border-top: 2px solid grey;
-    border-left: 2px solid grey;
     transform: scale(-1)rotate(90deg) ;
 }
 .navigation_path__collapse_button--collapsed{
@@ -82,3 +64,19 @@
 }
 
 
+.button_simple{
+    cursor: pointer;
+}
+
+.button_simple:hover{
+}
+.button_simple > img{
+    width: 32px;
+    scale: 1;
+    z-index: 1;
+    transition: scale 0.5s;
+}
+
+.button_simple > img:hover{
+    scale: 1.5;
+}

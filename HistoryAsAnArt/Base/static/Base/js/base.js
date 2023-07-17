@@ -85,12 +85,25 @@ function InitSite(){
     ResizeSite()
 }
 
+function MoveFooterButtonsToNavigation(){
+	let footer = document.querySelector(".navigation_footer")
+	let brother = document.querySelector(".navigation_body")
+	brother.insertAdjacentElement('afterend',footer)
+}
+
+function MoveFooterButtonsToTopPane(){
+	let footer = document.querySelector(".navigation_footer")
+	let brother = document.querySelector(".navigation_path__text")
+	brother.insertAdjacentElement('afterend',footer)
+}
+
 function ResizeSite(){
     if (window.innerWidth < 710 ){
         isNavigationCollapsed = true;
         isNavigationPathCollapsed = true;
         isMobile = true
         collapseNavigationPath.style.display = 'none'
+		MoveFooterButtonsToNavigation()
         CollapseAll()
     }
     else{
@@ -98,6 +111,7 @@ function ResizeSite(){
         isNavigationPathCollapsed = false;
         isMobile = false
         collapseNavigationPath.style.display = 'block'
+		MoveFooterButtonsToTopPane()
         RiseAll()
     }
 }

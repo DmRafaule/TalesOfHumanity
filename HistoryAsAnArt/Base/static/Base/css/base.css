@@ -3,6 +3,7 @@
 @import url(button.css);
 @import url(collapsingTree.css);
 @import url(navigation_path.css);
+@import url(debug.css);
 
 
 .wrapper{
@@ -100,6 +101,7 @@
 
 .navigation_footer{
     justify-content: space-around;
+	margin: 0px;
 }
 
 .navigation_footer__element{
