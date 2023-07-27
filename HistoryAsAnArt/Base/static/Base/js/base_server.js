@@ -34,8 +34,11 @@ function ClickOnToggler(){
 	});
 }
 
+function SwitchImage(){
 
+}
 
 $(document).ready(function(){
 	$(".collapsing_tree__toggler_header").one("click",ClickOnToggler);
 });
+

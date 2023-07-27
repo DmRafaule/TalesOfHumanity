@@ -1,10 +1,13 @@
 from django.urls import path
-from .views import home, about, navigation
+from .views import home, navigation, search, page_not_found
 
 
 urlpatterns = [
     path('', home, name='home'),
-    path('about/', about, name='about'),
+    path('search/', search, name='search'),
     path('navigation/', navigation, name='navigation'),
-    path('about/navigation/', navigation, name='about_navigation'),
+    path('search/navigation/', navigation, name='navigation'),
+    path('articles/<slug:slug>/navigation/', navigation, name='navigation'),
 ]
+
+

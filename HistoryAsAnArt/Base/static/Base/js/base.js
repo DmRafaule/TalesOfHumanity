@@ -1,12 +1,13 @@
 let collapseNavigation = document.getElementById('navigation_footer__collapse_button')
 let collapseNavigationPath = document.getElementById('navigation_path__collapse_button')
 let collapseAll = document.getElementById('navigation_footer__collapse_all')
-let themeSwitcher = document.getElementById('navigation_footer__theme_switcher')
 let languageSwitcher = document.getElementById('navigation_footer__language_switcher')
+let searcher = document.getElementById('navigation_footer__search')
 
-let theme = 'light'
+
 let isNavigationCollapsed = false
 let isNavigationPathCollapsed = false
+let isSearchToggled = true
 let isMobile = false
 
 
@@ -68,20 +69,19 @@ function RiseAll(){
 
 
 function HideAllFooterButtons(){
-    themeSwitcher.style.display = 'none'
     languageSwitcher.style.display = 'none'
     collapseAll.style.display = 'none'
+	searcher.style.display = 'none'
 }
 
 function RiseAllFooterButtons(){
-    themeSwitcher.style.display = 'block'
     languageSwitcher.style.display = 'block'
     collapseAll.style.display = 'block'
+	searcher.style.display = 'block'
 }
 
 function InitSite(){
     theme = localStorage.getItem('theme')
-    SwitchTheme(theme)
     ResizeSite()
 }
 
@@ -89,12 +89,14 @@ function MoveFooterButtonsToNavigation(){
 	let footer = document.querySelector(".navigation_footer")
 	let brother = document.querySelector(".navigation_body")
 	brother.insertAdjacentElement('afterend',footer)
+    collapseAll.remove()
 }
 
 function MoveFooterButtonsToTopPane(){
 	let footer = document.querySelector(".navigation_footer")
 	let brother = document.querySelector(".navigation_path__text")
 	brother.insertAdjacentElement('afterend',footer)
+	languageSwitcher.insertAdjacentElement('afterend',collapseAll)
 }
 
 function ResizeSite(){
@@ -116,59 +118,30 @@ function ResizeSite(){
     }
 }
 
-// SWITCH THEME BLOCK 
-
-function SwitchTheme(themeIdentificator) {// TODO change themes options
-    theme = themeIdentificator
-    localStorage.setItem('theme',theme)
-    switch(themeIdentificator){
-        case "light":
-            document.getElementById('wrapper').style.color = 'black'
-            document.getElementById('wrapper').style.backgroundColor = 'white'
-            var navigation = document.getElementById('navigation')
-            navigation.querySelectorAll('a').forEach(element => {
-                element.style.color = 'black'
-            })
-            document.querySelectorAll('.collapsing_tree__element > a').forEach(element => {
-                element.style.color = 'black'
-            })
-            break
-        case "dark":
-            document.getElementById('wrapper').style.color = 'white'
-            document.getElementById('wrapper').style.backgroundColor = 'black'
-            var navigation = document.getElementById('navigation')
-            navigation.querySelectorAll('a').forEach(element => {
-                element.style.color = 'white'
-            })
-            document.querySelectorAll('.collapsing_tree__element > a').forEach(element => {
-                element.style.color = 'white'
-            })
-            break;
-    }
-}
-
-// Hide all fotter buttons and display all hidden buttons
-function ToggleThemeChooser() {
-    HideAllFooterButtons()
-    document.querySelectorAll('#navigation_footer__theme_choise').forEach( element => {
-        element.style.display = 'block'
-    })
-}
-
-// Hide all theme choises and display back all fotter buttons
-document.querySelectorAll('#navigation_footer__theme_choise').forEach( element => {
-    element.addEventListener('click' , e => {
-        SwitchTheme(element.children.item(0).getAttribute('alt'))
-        document.querySelectorAll('#navigation_footer__theme_choise').forEach( element => { element.style.display = 'none' })
-        RiseAllFooterButtons()
-    }) 
-})
 
 // SWITCH LANGUAGE BLOCK
 
 function SwitchLanguage() {
 
 }
+
+// SEARCHER BLOCK
+function ToggleSearcher(){
+	let search_box = document.getElementById('navigation_footer__search__box')
+	HideAllFooterButtons()
+	if (isSearchToggled){
+		isSearchToggled = false
+		searcher.style.display = "block"
+		search_box.style.display = "block"
+	}
+	else{
+		isSearchToggled = true
+		RiseAllFooterButtons()
+		search_box.style.display = "none"
+	}
+}
+
+
 
 // Hide all fotter buttons and display all hidden buttons
 function ToggleLanguageChooser(){
@@ -200,9 +173,10 @@ collapseNavigationPath.addEventListener('click', e => {
 
 collapseAll.addEventListener('click', CollapseAll )
 
-themeSwitcher.addEventListener('click', ToggleThemeChooser )
-
 languageSwitcher.addEventListener('click', ToggleLanguageChooser )
+
+searcher.addEventListener('click', ToggleSearcher )
+
 
 window.addEventListener('load', InitSite );
 window.addEventListener('resize', ResizeSite );

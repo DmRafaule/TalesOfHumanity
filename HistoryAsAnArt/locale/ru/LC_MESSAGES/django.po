@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-25 18:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: Base/templates/Base/404.html:7
+msgid "Страница не найдена"
+msgstr ""
+
+#: Base/templates/Base/base.html:5
+msgid "Статьи"
+msgstr ""
+
+#. Translators: Title of the page
+#: Base/templates/Base/base.html:17 Base/templates/Base/base.html:25
+msgid "История как Искуство"
+msgstr ""
+
+#: Base/templates/Base/base.html:49
+msgid "Домой"
+msgstr ""
+
+#: Base/templates/Base/base.html:66
+msgid "Поиск"
+msgstr ""
+
+#: Base/templates/Base/home.html:12
+msgid "Об"
+msgstr ""
+
+#: Base/templates/Base/home.html:15
+msgid ""
+"\n"
+"\t\t\tДанный сайт, как я сам его называю, является выражением моей любви к "
+"истории, легендам, сказаниям.\n"
+"\t\t\tСмотря в Прошлое я вижу много забытых уроков которые нам преподала "
+"история.\n"
+"\t\t\tГлавной целью данного сайта я вижу преподование таких забытых уроков. "
+"Современые медиа,такие как youtube или wikipedia, если и расказывают "
+"историю, то не в том\n"
+"\t\t\tформате и не так как я бы расказывал.\n"
+"\t\t\t"
+msgstr ""
+
+#: Base/templates/Base/home.html:27
+msgid "Wikipedia слишком сухая и академическая."
+msgstr ""
+
+#: Base/templates/Base/home.html:35
+msgid ""
+"\n"
+"\t\t\t\tYouTube ... ну, многие авторы, популярные, предпочитают формат\n"
+"\t\t\t\tговорящей головы.\n"
+"\t\t\t"
+msgstr ""
+
+#: Base/templates/Base/home.html:42
+msgid ""
+"\n"
+"\t\t\tЯ бы хотел больше карт, лиц героев и мерзавцев, может даже анимации.\n"
+"\t\t\tИ вот он, мой сайт.\n"
+"\t\t\t"
+msgstr ""
+
+#: Base/templates/Base/home.html:48
+msgid "Фичи"
+msgstr ""
+
+#: Base/templates/Base/home.html:54
+msgid "Ручная рисовка"
+msgstr ""
+
+#: Base/templates/Base/home.html:57
+msgid ""
+"\n"
+"\t\t\t\t\tЯ знаю сейчас ChatGPT правит балом, но всегда когда я пытаюсь "
+"получить то что вижу у себя в голове, он сдаёт,\n"
+"\t\t\t\t\tи единственный и самый важный инструмент который у меня всегда был "
+"это мои руки\n"
+"\t\t\t\t\t"
+msgstr ""
+
+#: Base/templates/Base/home.html:67
+msgid "Наличие анимаций"
+msgstr ""
+
+#: Base/templates/Base/home.html:70
+msgid "Это скорее маленький бонус, который будет то тут то там"
+msgstr ""
+
+#: Base/templates/Base/home.html:77
+msgid "Списки литературы"
+msgstr ""
+
+#: Base/templates/Base/home.html:80
+msgid "Конечно же я беру все свои умозаключения из различных источников"
+msgstr ""
+
+#: Base/templates/Base/home.html:87
+msgid "Систематический подход"
+msgstr ""
+
+#: Base/templates/Base/home.html:90
+msgid "Для полного понимания ситуаций, и конфликтов"
+msgstr ""
+
+#: Base/templates/Base/home.html:96
+msgid "Минусы"
+msgstr ""
+
+#: Base/templates/Base/home.html:102
+msgid "Медленная разработка статей"
+msgstr ""
+
+#: Base/templates/Base/home.html:105
+msgid ""
+"Увы всё пока на мне, да и обрабатывать такой большой объём данных не быстрая "
+"работа"
+msgstr ""
+
+#: Base/templates/Base/home.html:112
+msgid "Субъективный взгляд"
+msgstr ""
+
+#: Base/templates/Base/home.html:115
+msgid ""
+"Вы должны понимать так как я человек, все данные, тексты, проходят через "
+"меня, по этому не могу претендовать на исключительную объективность своих "
+"взглядов"
+msgstr ""
+
+#: Base/templates/Base/home.html:121
+msgid "Как планирую улучшать сайт"
+msgstr ""
+
+#: Base/templates/Base/home.html:125
+msgid ""
+"\n"
+"\t\t\t\t<li>Разделение на \"домашнюю\" страницу и страницу \"об сайте\"</"
+"li>\n"
+"\t\t\t\t<li>Добавление тёмной темы</li>\n"
+"\t\t\t\t<li>Добавление возможности сохранять статьи ввиде pdf</li>\n"
+"\t\t\t\t<li>Добавление статистики о той или иной статье</li>\n"
+"\t\t\t\t<li>Добавление секции с коментариями рейтинг для статей</li>\n"
+"\t\t\t\t"
+msgstr ""
+
+#: Base/templates/Base/home.html:135
+msgid "Контакты"
+msgstr ""
+
+#: Base/templates/Base/search.html:10
+msgid "Результаты поиска для: "
+msgstr ""
+
+#: Base/templates/Base/search.html:13
+msgid "Найдено совпадений: "
+msgstr ""
+
+#: Base/templates/Base/search.html:24
+msgid "Увы, ничего не найдено"
+msgstr ""
+
+#: HistoryAsAnArt/settings.py:144
+msgid "Russian"
+msgstr ""
+
+#: HistoryAsAnArt/settings.py:145
+msgid "English"
+msgstr ""

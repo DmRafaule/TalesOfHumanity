@@ -1,7 +1,11 @@
 {% load static %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% translate "Статьи" as ComparerForStartNav %}
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang={{ LANGUAGE_CODE }}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap">
     <link type="text/css" rel="stylesheet" href="{% static 'Base/css/base.css' %}"/>
-    <title>История как Искуство</title>
+	{# Translators: Title of the page #}
+	<title>{% translate "История как Искуство" %}</title>
     <!-- Block of code for apps headers-->
     {% block header %}
     {% endblock %}
@@ -17,17 +22,17 @@
 <body>
     <div id="wrapper" class="wrapper row_container">
         <div id="navigation" class="navigation column_container row_container_element container--paddings ">
-            <div class="navigation_title column_container_element container__column--margins "><a href="{% url 'home' %}" >История как Искуство</a></div>
+			<div class="navigation_title column_container_element container__column--margins "><a href="{% url 'home' %}" >{% translate "История как Искуство" %}</a></div>
             <div class="navigation_body column_container_element__expanding container__column--margins container--paddings ">
                 <div id="articles" class="navigation_body__element container__column--margins">
                     <!-- START Collapsing tree root -->
                     <div class="collapsing_tree">
                         {% for category in categories %}
-                            {% if category.name == "Статьи" %}
+                            {% if category.name == ComparerForStartNav %}
                             <div class="collapsing_tree__toggler">
 								<div id="collapsing_tree__toggler_header_{{category.id}}" class="collapsing_tree__toggler_header collapsing_tree__element" data-catid="{{category.id}}" data-catname="{{category.name}}">
-                                    <img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.png' %}" alt="image for toggle list, folder">
-                                    <span>{{category.name}}</span>
+                                    <img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.webp' %}" alt="image for toggle list, folder">
+									<span>{{category.name}}</span>
                                 </div>
 								<div id ="collapsing_tree__toggler_body_{{category.id}}" class="collapsing_tree__toggler_body active">
                                 </div>
@@ -37,58 +42,56 @@
                     </div>
                     <!-- End Collapsing tree root -->
                 </div>
-                <div id="about" class="navigation_body__element container__column--margins">
-                    <img class="collapsing_tree__side_image" src="{% static 'Base/img/question.png' %}" alt="question mark">
-                    <span><a href="{% url 'about' %}">Об проекте</a></span>
+
+                <div id="home" class="navigation_body__element container__column--margins">
+                    <img class="collapsing_tree__side_image" src="{% static 'Base/img/home.webp' %}" alt="question mark">
+					{# Link to home #}
+					<span><a href="{% url 'home' %}">{% translate "Домой" %}</a></span>
                 </div>
             </div>
 			<!-- Place to paste navigation_footer -->
             <!--Button to collapse navigation element (on side)-->
             <div id="navigation_footer__collapse_button" class="button_simple navigation_footer__collapse_button container__row--margins ">
-                <img src="{% static 'Base/img/collapse.png' %}" alt="Collapse to left arrow">
+                <img src="{% static 'Base/img/collapse.webp' %}" alt="Collapse to left arrow">
             </div>
         </div>
-        <div id="navigation_path__container" class="column_container row_container_element__expanding">
+        <div id="navigation_path__container" class="column_container">
             <div id="navigation_path" class="navigation_path row_container column_container_element ">
                 <div id="navigation_path__text" class="navigation_path__text row_container row_container_element__expanding  container__row--margins">
 				</div>
 				<div class="navigation_footer row_container column_container_element container__column--margins container--paddings ">
-					<div id="navigation_footer__language_switcher" class="button navigation_footer__element row_container_element container__row--margins">
-						<img src="{% static 'Base/img/language.png' %}" alt="Language choises">
+					<!-- START Search field -->
+					<div id="navigation_footer__search__box" class="button row_container_element container__row--margins">
+						<form class="search-bar" method=GET action="{% url 'search' %}">
+							<input type="search" placeholder="{% translate "Поиск" %}" name="searched" required maxlength=50 width=100>
+						</form>
+					</div>
+					<!-- END Search field -->
+					<div id="navigation_footer__search" class="button navigation_footer__element row_container_element container__row--margins">
+						<img src="{% static 'Base/img/search.webp' %}" alt="Language choises">
 					</div>
 					<!-- START Language list-->
-					<div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins">
-						<img src="{% static 'Base/img/belarus.png' %}" alt="Belorusian flag">
+					<div id="navigation_footer__language_switcher" class="button navigation_footer__element row_container_element container__row--margins">
+						<img src="{% static 'Base/img/language.webp' %}" alt="Language choises">
 					</div>
 					<div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins">
-						<img src="{% static 'Base/img/russia.png' %}" alt="Russian flag">
+						<a href="/ru{{request.get_full_path|cut:"ru/"|cut:"en/"}}"><img src="{% static 'Base/img/russia.webp' %}" alt="Russian flag"></a>
 					</div>
 					<div id="navigation_footer__language_choise" class="button navigation_footer__element row_container_element container__row--margins">
-						<img src="{% static 'Base/img/english.png' %}" alt="English flag">
+						<a href="/en{{request.get_full_path|cut:"ru/"|cut:"en/"}}"><img src="{% static 'Base/img/english.webp' %}" alt="English flag"></a>
 					</div>
 					<!-- END Language list-->
-					<div id="navigation_footer__theme_switcher" class="button navigation_footer__element row_container_element container__row--margins">
-						<img id="navigation_footer__theme_switcher__img" src="{% static 'Base/img/themes.png' %}" alt="Themes switcher">
-					</div>
-					<!-- START Themes list-->
-					<div id="navigation_footer__theme_choise" class="button navigation_footer__element row_container_element container__row--margins">
-						<img src="{% static 'Base/img/sun.png' %}" alt="light" >
-					</div>
-					<div id="navigation_footer__theme_choise" class="button navigation_footer__element row_container_element container__row--margins">
-						<img src="{% static 'Base/img/half-moon.png' %}" alt="dark">
-					</div>
-					<!-- END Theme list -->
 					<div id="navigation_footer__collapse_all" class="button navigation_footer__element row_container_element container__row--margins">
-						<img src="{% static 'Base/img/maximize.png' %}" alt="Maximize viewer">
+						<img src="{% static 'Base/img/maximize.webp' %}" alt="Maximize viewer">
 					</div>
 				</div>
                 <!--Button to collapse navigation_path element(on top)-->
                 <div id="navigation_path__collapse_button" class="button_simple navigation_path__collapse_button">
-                    <img src="{% static 'Base/img/collapse.png' %}" alt="Collapse to top arrow">
+                    <img src="{% static 'Base/img/collapse.webp' %}" alt="Collapse to top arrow">
                 </div>
             </div>
-            <div id="viewer"  class=" column_container_element__expanding container--paddings">
-                <!-- Block of code for apps content-->
+            <div id="viewer"  class="column_container column_container_element__expanding container--paddings">
+				<!-- Block of code for apps content -->
                 {% block body %}
                 {% endblock %}
             </div>

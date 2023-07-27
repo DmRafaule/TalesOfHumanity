@@ -1,4 +1,4 @@
-@keyframes move-toleft {
-    from {transform: translateX(0px);}
-    to {transform: translateX(-300px);}
+@keyframes pushed {
+    from {transform: scale(1);}
+    to {transform: scale(1.3);}
 }

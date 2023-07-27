@@ -1,7 +1,7 @@
 @import url(zero.css);
 @import url(containers.css);
 @import url(button.css);
-@import url(collapsingTree.css);
+@import url(navigation.css);
 @import url(navigation_path.css);
 @import url(debug.css);
 
@@ -12,7 +12,8 @@
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     font-weight: 400;
-    background-image: linear-gradient( 58.2deg,  rgba(40,91,212,0.73) -3%, rgba(171,53,163,0.45) 49.3%, rgba(255,204,112,0.37) 97.7% );
+	background: rgb(255,255,255);
+	background: linear-gradient(205deg, rgba(255,255,255,0) 51%, rgba(238,213,154,1) 100%); 
 }
 .wrapper--mobile{
     width: 100%;
@@ -21,15 +22,14 @@
     font-size: 24px;
     font-weight: 400;
     justify-content: center;
-    background-image: linear-gradient( 58.2deg,  rgba(40,91,212,0.73) -3%, rgba(171,53,163,0.45) 49.3%, rgba(255,204,112,0.37) 97.7% );
+	background: rgb(255,255,255);
+	background: linear-gradient(205deg, rgba(255,255,255,0) 51%, rgba(238,213,154,1) 100%); 
 }
 
 .navigation{
 	max-height: 100%;
 	overflow:scroll;
-    flex: 0 1 auto;
-	/*height:100%;*/
-    /*overflow: hidden;*/
+    flex: 0 0 auto;
     transition: width 0.5s, padding 0.5s;
 }
 .navigation--hide{
@@ -74,6 +74,7 @@
 	overflow:scroll;*/
     border-top: 2px solid rgb(113, 113, 113);
     border-bottom: 2px ridge rgb(113, 113, 113);
+    transition: width 0.5s, padding 0.5s;
 }
 
 
@@ -87,13 +88,13 @@
     overflow-y:scroll;
 }
 
-#about{
+#about, #home{
     padding-left: 10px;
     letter-spacing: inherit;
     transition: box-shadow 0.3s, -webkit-box-shadow 0.3s, -moz-box-shadow 0.3s;
 }
 
-#about:hover{
+#about:hover, #home:hover{
     box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
     -webkit-box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
@@ -101,29 +102,88 @@
 
 .navigation_footer{
     justify-content: space-around;
+	flex-wrap: wrap;
 	margin: 0px;
 }
 
 .navigation_footer__element{
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
     border-right: 2px solid grey;
 }
 
 .navigation_footer__element:active{
-    animation: move-toleft;
-    animation-duration: 3s;
+    animation: pushed;
+    animation-duration: 1s;
 }
 
-#navigation_footer__theme_choise, #navigation_footer__language_choise {
+#navigation_footer__language_switcher{
+}
+
+#navigation_footer__theme_choise, #navigation_footer__language_choise, #navigation_footer__search__box {
     display: none;
+}
+
+#navigation_footer__search__box{
+	padding-left: 5px;
+	padding-right: 5px;
+    border-top: 2px solid grey;
+    border-left: 4px solid grey;
+    border-right: 0px solid grey;
+}
+
+#navigation_footer__search__box > form > input{
+	padding: 5px;
 }
 
 
 #viewer{
+	overflow: scroll;
+	width: 100%;
+	height: 300px;
     border-top: 2px ridge grey;
     border-left: 2px ridge grey;
     box-shadow: -14px -12px 23px 2px rgba(0,0,0,0.64);
     -webkit-box-shadow: -14px -12px 23px 2px rgba(0,0,0,0.64);
     -moz-box-shadow: -14px -12px 23px 2px rgba(0,0,0,0.64);
+}
+
+.container_not_found{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content:center;
+	align-items: center;
+}
+
+.search_container_empty{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content:center;
+}
+
+.search_container{
+	margin: 5px;
+}
+
+
+.search_title{
+
+}
+
+.search_count{
+
+}
+
+.search_body{
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.search_body__element{
+	padding-left: 15px;
+	border-bottom: 1px solid grey;
 }

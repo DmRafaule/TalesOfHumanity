@@ -52,7 +52,7 @@
 }
 
 
-.button > img{
+.button > img, .button > a > img {
     width: 32px;
     scale: 1;
     z-index: 1;

@@ -8,7 +8,6 @@
 }
 
 .collapsing_tree__element{
-  padding: 5px;
   padding-left: 10px;
   cursor: pointer;
   user-select: none;

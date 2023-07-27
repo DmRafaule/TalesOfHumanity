@@ -1,12 +1,153 @@
 {% extends 'Base/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block header %}
     <link type="text/css" rel="stylesheet" href="{% static 'Base/css/home.css' %}"/>
 {% endblock %}
 
 {% block body %}
-    <p>Home</p>
+	<div class="home column_container  container--paddings ">
+		<div class="prt0 text title column_container_element">
+			<h2>{% trans "Об" %}</h2>
+		</div>
+		<div class="prt1 text column_container_element">
+			{% blocktrans %}
+			Данный сайт, как я сам его называю, является выражением моей любви к истории, легендам, сказаниям.
+			Смотря в Прошлое я вижу много забытых уроков которые нам преподала история.
+			Главной целью данного сайта я вижу преподование таких забытых уроков. Современые медиа,такие как youtube или wikipedia, если и расказывают историю, то не в том
+			формате и не так как я бы расказывал.
+			{% endblocktrans %}
+		</div>
+		<div class="prt2 column_container_element row_container">
+			<div class="image">
+				<img src="{% static 'Base/img/wikipedia.webp'%}" alt="wikipedia image">
+			</div>
+			<div class="text">
+				{% trans "Wikipedia слишком сухая и академическая." %}
+			</div>
+		</div>
+		<div class="prt3 column_container_element row_container">
+			<div class="image">
+				<img src="{% static 'Base/img/youtube.webp'%}" alt="youtube image">
+			</div>
+			<div class="text">
+			{% blocktrans %}
+				YouTube ... ну, многие авторы, популярные, предпочитают формат
+				говорящей головы.
+			{% endblocktrans %}
+			</div>
+		</div>
+		<div class="prt4 text column_container_element ">
+			{% blocktrans %}
+			Я бы хотел больше карт, лиц героев и мерзавцев, может даже анимации.
+			И вот он, мой сайт.
+			{% endblocktrans %}
+		</div>
+		<div class="prt5 text title column_container_element ">
+			<h2>{%trans "Фичи" %}</h2>
+		</div>
+		<div class="prt6 cards column_container_element row_container">
+			<div class="card row_container_element">
+			  <div class="content">
+				<div class="front">
+					<div>{% trans "Ручная рисовка" %}</div>
+					<img src="{% static 'Base/img/card.webp'%}" alt="">
+				</div>
+				<div class="back">
+					{% blocktrans %}
+					Я знаю сейчас ChatGPT правит балом, но всегда когда я пытаюсь получить то что вижу у себя в голове, он сдаёт,
+					и единственный и самый важный инструмент который у меня всегда был это мои руки
+					{% endblocktrans %}
+				</div>
+			  </div>
+			</div>
+			<div class="card row_container_element">
+			  <div class="content">
+				<div class="front">
+					<div>{% trans "Наличие анимаций" %}</div>
+					<img src="{% static 'Base/img/card.webp'%}" alt="">
+				</div>
+				<div class="back">
+					{% trans "Это скорее маленький бонус, который будет то тут то там" %}
+				</div>
+			  </div>
+			</div>
+			<div class="card row_container_element">
+			  <div class="content">
+				<div class="front">
+					<div>{% trans "Списки литературы" %}</div>
+					<img src="{% static 'Base/img/card.webp'%}" alt="">
+				</div>
+				<div class="back">
+					{% trans "Конечно же я беру все свои умозаключения из различных источников" %}
+				</div>
+			  </div>
+			</div>
+			<div class="card row_container_element">
+			  <div class="content">
+				<div class="front">
+					<div>{% trans "Систематический подход" %}</div>
+					<img src="{% static 'Base/img/card.webp'%}" alt="">
+				</div>
+				<div class="back">
+					{% trans "Для полного понимания ситуаций, и конфликтов" %}
+				</div>
+			  </div>
+			</div>
+		</div>
+		<div class="prt7 text title column_container_element ">
+			<h2>{% trans "Минусы" %}</h2>
+		</div>
+		<div class="prt8 cards column_container_element row_container">
+			<div class="card row_container_element">
+			  <div class="content">
+				<div class="front">
+					<div>{% trans "Медленная разработка статей" %}</div>
+					<img src="{% static 'Base/img/card.webp'%}" alt="">
+				</div>
+				<div class="back">
+					{% trans "Увы всё пока на мне, да и обрабатывать такой большой объём данных не быстрая работа" %}
+				</div>
+			  </div>
+			</div>
+			<div class="card row_container_element">
+			  <div class="content">
+				<div class="front">
+					<div>{% trans "Субъективный взгляд" %}</div>
+					<img src="{% static 'Base/img/card.webp'%}" alt="">
+				</div>
+				<div class="back">
+					{% trans "Вы должны понимать так как я человек, все данные, тексты, проходят через меня, по этому не могу претендовать на исключительную объективность своих взглядов" %}
+				</div>
+			  </div>
+			</div>
+		</div>
+		<div class="prt9 text title column_container_element ">
+			<h2>{% trans "Как планирую улучшать сайт" %}</h2>
+		</div>
+		<div class="prt10 text column_container_element column_container">
+			<ul>
+				{% blocktrans %}
+				<li>Разделение на "домашнюю" страницу и страницу "об сайте"</li>
+				<li>Добавление тёмной темы</li>
+				<li>Добавление возможности сохранять статьи ввиде pdf</li>
+				<li>Добавление статистики о той или иной статье</li>
+				<li>Добавление секции с коментариями рейтинг для статей</li>
+				{% endblocktrans %}
+			</ul>
+		</div>
+		<div class="prt11 text title column_container_element ">
+			<h2>{% trans "Контакты" %}</h2>
+		</div>
+		<div class="prt12 text column_container_element column_container">
+			<ul>
+				<li><a rel="noreferrer noopener" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=chedrden@gmail.com">ChedrDen@gmail.com</a></li>
+				<li><a rel="noreferrer noopener" href="https://www.instagram.com/timachedr/">Instagram</a></li>
+				<li><a rel="noreferrer noopener" href="https://t.me/DmitryChedr">Telegram</a></li>
+			</ul>
+		</div>
+	</div>
 {% endblock %}
 
 {% block script_block %}

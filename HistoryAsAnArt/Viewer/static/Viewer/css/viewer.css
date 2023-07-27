@@ -1,0 +1,45 @@
+
+.text{
+	min-width: 200px;
+	padding:30px;
+	font-size: 24px;
+	text-align: justify;
+}
+
+.main_title{
+	margin-top: 120px;
+	padding:30px;
+	padding-left: 60px;
+	text-align: left;
+	font-size: 36px;
+    font-weight: 700;
+}
+
+.title{
+	margin-top: 60px;
+	padding:30px;
+	padding-left: 60px;
+	text-align: left;
+	font-size: 28px;
+}
+
+.image{
+	margin: 30px;
+}
+
+.image + .text{
+	margin-top: 70px;
+	margin-bottom: 70px;
+	max-width: 600px;
+}
+
+.image > img{
+	width: 300px;
+	height: auto;
+}
+
+
+ul > li {
+	list-style-type: square;
+	margin-bottom: 10px;
+}
