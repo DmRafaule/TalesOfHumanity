@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import home, navigation, search, page_not_found
-
+from .views import home, navigation, search
 
 urlpatterns = [
     path('', home, name='home'),
@@ -9,5 +8,3 @@ urlpatterns = [
     path('search/navigation/', navigation, name='navigation'),
     path('articles/<slug:slug>/navigation/', navigation, name='navigation'),
 ]
-
-

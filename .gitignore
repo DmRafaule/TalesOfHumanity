@@ -1,2 +1,6 @@
 .venv
 __pycache__
+Documents
+HistoryAsAnArt/media
+HistoryAsAnArt/locale
+HistoryAsAnArt/db.sqlite3

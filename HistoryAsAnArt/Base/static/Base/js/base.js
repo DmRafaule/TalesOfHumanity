@@ -100,7 +100,7 @@ function MoveFooterButtonsToTopPane(){
 }
 
 function ResizeSite(){
-    if (window.innerWidth < 710 ){
+    if (window.innerWidth < 810 ){
         isNavigationCollapsed = true;
         isNavigationPathCollapsed = true;
         isMobile = true

@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.sitemaps import Sitemap
 
 
 def user_directory_path(instance, filename):
@@ -60,3 +61,12 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return reverse("categories", kwargs={"cat_slug": self.slug})
+
+
+class ArticleSitemap(Sitemap):
+    changefreq = "daily"
+    priority = 0.5
+    i18n = True
+
+    def items(self):
+        return Article.objects.all()

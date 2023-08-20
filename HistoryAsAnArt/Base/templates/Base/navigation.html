@@ -1,10 +1,11 @@
 {% load static %}
+{% load i18n %}
 
 {% for category in categories%}
     <div class="collapsing_tree__toggler">
         {% csrf_token %}
         <div id="collapsing_tree__toggler_header_{{category.id}}" class="collapsing_tree__toggler_header collapsing_tree__element" data-catid="{{category.id}}" data-catname="{{category.name}}">
-            <img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.webp' %}" alt="image for toggle list, folder">
+			<img class="collapsing_tree__side_image" src="{% static 'Base/img/folder.webp' %}" alt="{% trans "Кипа свитков" %}">
 
             <span>{{category.name}}</span>
         </div>
@@ -16,7 +17,7 @@
 {% for article in articles %}
 	<div class="collapsing_tree__element">
 		<a href="{{ article.get_absolute_url }}">
-			<img class="collapsing_tree__side_image" src="{% static 'Base/img/script.webp' %}" alt="image for toggle list, folder">
+			<img class="collapsing_tree__side_image" src="{% static 'Base/img/script.webp' %}" alt="{% trans "Свиток" %}">
 			<span>{{ article.title }}</span>
 		</a>
 	</div>

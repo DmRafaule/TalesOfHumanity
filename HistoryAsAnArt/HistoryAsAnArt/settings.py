@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'Base.apps.BaseConfig',
     'Viewer.apps.ViewerConfig',
 ]
@@ -148,3 +149,6 @@ LANGUAGES = [
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
 )
+
+# For sitemaps support
+SITE_ID = 1
