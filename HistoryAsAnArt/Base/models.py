@@ -11,6 +11,9 @@ class Article(models.Model):
     title = models.CharField(max_length=100, db_index=True, unique=True, blank=False)
     slug = models.SlugField(max_length=100, db_index=True, unique=True, blank=False)
     template = models.FileField(upload_to=user_directory_path, blank=False)
+    time_added = models.DateTimeField(auto_now_add=True)
+    time_updated = models.DateTimeField(auto_now=True)
+    is_published = models.BooleanField(default=True)
     # I know the most stupiedest way to hold array of imgs but this work, and I'm ok with this
     img1 = models.ImageField(upload_to=user_directory_path, blank=True)
     img2 = models.ImageField(upload_to=user_directory_path, blank=True)
@@ -64,9 +67,10 @@ class Category(models.Model):
 
 
 class ArticleSitemap(Sitemap):
-    changefreq = "daily"
-    priority = 0.5
     i18n = True
 
     def items(self):
         return Article.objects.all()
+
+    def lastmod(self, obj):
+        return obj.time_updated

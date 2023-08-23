@@ -14,7 +14,7 @@ def home(request):
 def search(request):
     if request.method == 'GET':
         searched = request.GET['searched']
-        articles = Article.objects.filter(title__icontains=searched)
+        articles = Article.objects.filter(title__icontains=searched).exclude(is_published=False)
         context = {
             'articles': Article.objects.all(),
             'categories': Category.objects.all(),
@@ -36,7 +36,7 @@ def navigation(request, slug='empty'):
         cat_paren_name = request.POST['parent']
         cat = Category.objects.get(id=int(cat_id))
     context = {
-        'articles': cat.articles.all(),
+        'articles': cat.articles.all().exclude(is_published=False),
         'categories': cat.subcategories.all().exclude(name=cat_paren_name),
     }
     return render(request, 'Base/navigation.html', context)

@@ -9,7 +9,7 @@ let isNavigationCollapsed = false
 let isNavigationPathCollapsed = false
 let isSearchToggled = true
 let isMobile = false
-
+let prevWindowWidth
 
 function CollapseNavigation() {
     isNavigationCollapsed = true
@@ -82,7 +82,7 @@ function RiseAllFooterButtons(){
 
 function InitSite(){
     theme = localStorage.getItem('theme')
-    ResizeSite()
+    ResizeSite(true)
 }
 
 function MoveFooterButtonsToNavigation(){
@@ -99,14 +99,17 @@ function MoveFooterButtonsToTopPane(){
 	languageSwitcher.insertAdjacentElement('afterend',collapseAll)
 }
 
-function ResizeSite(){
+function ResizeSite(isInit){
     if (window.innerWidth < 810 ){
-        isNavigationCollapsed = true;
-        isNavigationPathCollapsed = true;
-        isMobile = true
-        collapseNavigationPath.style.display = 'none'
-		MoveFooterButtonsToNavigation()
-        CollapseAll()
+		if (!(window.innerWidth == prevWindowWidth) || isInit){
+			console.log("Width does not changed") 
+			isNavigationCollapsed = true;
+			isNavigationPathCollapsed = true;
+			isMobile = true
+			collapseNavigationPath.style.display = 'none'
+			MoveFooterButtonsToNavigation()
+			CollapseAll()
+		}
     }
     else{
         isNavigationCollapsed = false;
@@ -116,6 +119,8 @@ function ResizeSite(){
 		MoveFooterButtonsToTopPane()
         RiseAll()
     }
+	prevWindowWidth = window.innerWidth 
+
 }
 
 
@@ -179,4 +184,6 @@ searcher.addEventListener('click', ToggleSearcher )
 
 
 window.addEventListener('load', InitSite );
-window.addEventListener('resize', ResizeSite );
+window.addEventListener('resize', e => {
+	ResizeSite(false)
+});

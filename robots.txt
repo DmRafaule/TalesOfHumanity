@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /admin/*
+Disallow: /en/search/*
+Disallow: /ru/search/*
+
+Host: https://historiesofhumanity.com
+Sitemap: https://historiesofhumanity.com/sitemap.xml
