@@ -1,0 +1,167 @@
+.about{
+	margin: 5% 3% 5% 3%;
+}
+
+ul > li {
+	list-style-type: square;
+	margin-bottom: 10px;
+}
+
+.prt0-1-2{
+	background-repeat: no-repeat no-repeat;
+	background-size: 100% 100%;
+}
+.prt3-4{
+	background-repeat: no-repeat no-repeat;
+	background-size: 100% 100%;
+}
+.prt5-6{
+	background-repeat: no-repeat no-repeat;
+	background-size: 100% 100%;
+}
+
+.prt0, .prt3{
+	align-self: end;
+}
+
+.prt6, .prt5{
+	align-self: start;
+}
+
+.text{
+	max-width: 500px;
+	padding:30px;
+	font-size: 26px;
+	text-align: justify;
+}
+
+.list{
+	display: flex;
+	flex-direction:column;
+	min-width: 200px;
+	padding:30px;
+	font-size: 24px;
+	text-align: justify;
+	align-self: left;
+	line-height: 30px;
+	text-indent: 30px;
+}
+
+.list > li {
+	list-style-type: square;
+	margin-bottom: 10px;
+	margin-left: 30px;
+}
+
+
+.title{
+	margin-top: 120px;
+	padding:30px;
+	padding-left: 60px;
+	text-align: left;
+	font-size: 36px;
+	font-family: 'Bellota', cursive;
+}
+
+
+.image{
+	margin: 30px;
+}
+
+.image + .text{
+	margin-top: 70px;
+	margin-bottom: 70px;
+	max-width: 600px;
+}
+
+.image > img{
+	width: 300px;
+	height: auto;
+}
+
+
+/* Card styles */
+.cards{
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.card {
+  margin-top: 30px;
+  width: 300px;
+  height: 300px;
+}
+
+.simple-card{
+	margin: 50px;
+	width: 300px;
+}
+
+
+.front:hover{
+	background-color: #eae85d;
+}
+
+.front > img {
+	position: absolute;
+	width:100%;
+	left:0px;
+	top: 0px;
+}
+
+.front > div {
+	position: absolute;
+	width:100%;
+	height: 50%;
+	left:0px;
+	top: 0px;
+	align-text: center;
+	margin-top: 50%;
+	z-index: 2;
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.toFlip{
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+}
+
+.toFlip > .front > div {
+	z-index:0;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  color: black;
+  padding: 10px;
+  padding: 50px 0;
+  text-align: center;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  transition: background-color 1s;
+}
+
+.back {
+  background: #eae85d;
+  transform: rotateY( 180deg );
+  
+}
+
+.icon_to_display{
+  width: 32px;
+  margin: 5px;
+}

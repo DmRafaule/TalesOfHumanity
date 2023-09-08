@@ -177,22 +177,43 @@
 
 /* Collapsing tree */
 .content_tree__element{
-  padding-left: 10px;
-  cursor: pointer;
-  user-select: none;
-  letter-spacing: inherit;
-  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s, -moz-box-shadow 0.3s;
+	display: flex; 
+	align-items: center;
+	padding-left: 10px;
+	cursor: pointer;
+	user-select: none;
+	letter-spacing: 3px;
 }
 
+
 .content_tree__element:hover{
-  box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
-  -webkit-box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
-  -moz-box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
+	border-bottom: 2px ridge #C26247;
 }
+
+.content_tree__toggler_header:hover{
+	border-bottom: 0px ridge #C26247;
+}
+
+.content_tree__toggler_header > img:hover{
+  transition: scale 0.3s;
+}
+
+.content_tree__toggler_header > img:hover{
+	scale: 1.2;
+}
+
+.content_tree__toggler_header > img{
+  width: 32px;
+  margin: 5px;
+}
+
 
 .content_tree__element > a{
  text-decoration: none;
  color: black;
+}
+
+.content_tree__element > span{
 }
 
 .content_tree__toggler{
@@ -200,6 +221,15 @@
   padding-left: 10px;
   cursor: pointer;
   user-select: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+border-radius: 20px 0px 0px 0px;
+-webkit-border-radius: 20px 0px 0px 0px;
+-moz-border-radius: 20px 0px 0px 0px;
+border-left: 7px ridge #232323;
+border-top: 7px ridge #232323;
+	background: #EEF1F6;
 }
 
 .content_tree__toggler_header{
@@ -210,8 +240,15 @@
 }
 
 .content_tree__side_image{
-  width: 16px;
+  width: 32px;
   margin: 5px;
+}
+
+@media only screen and (max-width: 900px){
+	.content_tree__toggler_header > img{
+	  width: 64px;
+	  margin: 5px;
+	}
 }
 
 /*table*/
@@ -256,3 +293,42 @@
 	vertical-align:top;
 }
 
+/*Pop up elent for back interaction*/
+.popup_interaction__container{
+	display: flex;
+	position: absolute;
+	top: 50%;
+    right: 0; 
+}
+.popup_interaction--request{
+	display: none;
+	width: fit-content;
+	border-radius: 20px;
+	border: 7px ridge #232323;
+	background:#EEF1F6; 
+	transform: translate(0,-50%);
+}
+.popup_active{
+	display: flex;
+}
+
+.popup_el{
+	justify-content: center;
+	align-items: center;
+}
+.popup_el > img{
+    width: 32px;
+}
+
+.popup_counter{
+	align-self: center;
+	justify-self: center;
+}
+
+.popup_shares{
+	border-top: 7px ridge #232323;
+}
+
+#popup_viewed{
+	padding: 10px;
+}

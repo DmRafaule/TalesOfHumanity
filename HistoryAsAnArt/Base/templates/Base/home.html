@@ -4,107 +4,119 @@
 
 {% block header %}
     <link type="text/css" rel="stylesheet" href="{% static 'Base/css/home.css' %}"/>
+	<link rel="canonical" href="https://historiesofhumanity.com{%url 'home'%}" />
 	<meta name="description" content="{% trans "История 📜 ❱ Сказки для детей и взрослых ❱ Древние мифы и легенды народов мира. Всё это с картинками 🖼 и графикой 🖌, в краткой и полной форме" %}">
 	<title>{% translate "История, Сказки, Мифы и Легенды на сайте Истории Человечества" %}</title>
 {% endblock %}
 
 {% block body %}
 	<div class="home column_container  container--paddings ">
-		<div class="title column_container_element">
-			<h1><b>{% trans "Сайт Истории Человечества" %}</b></h1>
-		</div>
-		<div class="prt0-1-2 column_container" style="background-image: url('{% static 'Base/img/bg_red.webp' %}');">
-			<div class="prt0 text title column_container_element">
-				<h2>{% trans "Об" %}</h2>
+		<div class="title row_container row_container--wrap">
+			<div class="title_logo">
+				<img src="{% static 'Base/img/logo.webp' %}" alt="{% trans "Логотип сайта Истории человечества" %}">
 			</div>
-			<div class="prt1 row_container row_container--wrap">
-				<div class="row_container_element__expanding">
+			<div class="title_body">
+				<div class="title_name">
+					<h1><b>{% trans "Истории Человечества" %}</b></h1>
 				</div>
-				<div >
-					<div class="text">
-						{% blocktrans %}
-						Приветствую своих гостей на моём сайте. Вас наверняка интересует
-						о чём же "Истории человечества" и что же вы найдёте?
-						{% endblocktrans %}
+				<div class="title_quote">
+					<p><b><i>{% trans "'Мы должны учиться на ошибках наших предков'" %}</i></b></p>
+				</div>
+			</div>
+		</div>
+		<div class="new_articles home_container">
+			<div class="title_name">
+				<h2><b>{% trans "Новые статьи" %}</b></h1>
+			</div>
+			<div class="home_description">
+				{% blocktrans %}
+				Недавно добавленные статьи.
+				{% endblocktrans %}
+			</div>
+			<div class="home_articles__container row_container row_container--wrap row_container--align_sa">
+				{% for n_art in new_articles %}
+				<div class="home_articles__el column_container">
+					<div class="home_article__el__image container--margins">
+						<a class="link" href="{{n_art.get_absolute_url}}"><img src="{{media_root}}{{n_art.img1}}" alt="{% trans "Превью статьи" %}"></a>
 					</div>
-					<div class="text">
-						{% blocktrans %}
-						Что же, на этом сайте я выкладываю статьи о различных исторических
-						событиях, мифы и легенды, сказки и фольклорные рассказы,
-						различные истории из жизни, которые мне показались интересными.
-						{% endblocktrans %}
+					<a class="link" href="{{n_art.get_absolute_url}}"><div class="home_article__el__title  container--paddings" >{{n_art.title}}</div></a>
+					<div class="row_container">
+						<div class="home_article__el__timeadded container--paddings">🕐 {{n_art.time_added|date:"d.m.Y"}}</div>
 					</div>
+					<a class="link" href="{{n_art.get_absolute_url}}"><div class="container--paddings  home_article__el__read">{% trans "➲ Читать" %}</div></a>
 				</div>
-			</div>
-			<div class="prt2 row_container row_container--wrap ">
-				<div class="text">
-					{% blocktrans %}
-					Для разных статей у меня разный подход. Для статей связаных с историей
-					я стараюсь найти карты, статистику , добавить источники,
-					откуда я взял данные. С мифами и легендами подход другой, для их требуется
-					много ручной рисовки, а вот карт и статистики не требуется.
-					{% endblocktrans %}
+				<div class="circle_container">
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
 				</div>
-				<div class="row_container_element__expanding">
-				</div>
+				{% endfor %}
 			</div>
 		</div>
-	
-		<div class="prt3-4 column_container" style="background-image: url('{% static 'Base/img/bg_blue.webp' %}');">
-			<div class="prt3 text title column_container_element ">
-				<h2>{% trans "Как планирую улучшать сайт" %}</h2>
+		<div class="popular_articles home_container">
+			<div class="title_name">
+				<h2><b>{% trans "Популярные статьи" %}</b></h1>
 			</div>
-			<div class="prt4 row_container row_container--wrap">
-				<ul class="text">
-					{% blocktrans %}
-					<li>Разделение на "домашнюю" страницу и страницу "об сайте"</li>
-					<li><s>Содержание статьи</s></li>
-					<li>Добавление тёмной темы</li>
-					<li>Добавление возможности сохранять статьи ввиде pdf</li>
-					<li>Добавление статистики о той или иной статье</li>
-					<li>Добавление секции с коментариями рейтинг для статей</li>
-					{% endblocktrans %}
-				</ul>
-				<div class="row_container_element__expanding">
+			<div class="home_description">
+				{% blocktrans %}
+				Самые популярные статьи у гостей.
+				{% endblocktrans %}
+			</div>
+			<div class="home_articles__container  row_container row_container--wrap row_container--align_sa">
+				{% for p_art in popular_articles %}
+				<div class="home_articles__el column_container">
+					<div class="home_article__el__image container--margins">
+						<a class="link" href="{{p_art.get_absolute_url}}"><img src="{{media_root}}{{p_art.img1}}" alt="{% trans "Превью статьи" %}"></a>
+					</div>
+					<a class="link" href="{{p_art.get_absolute_url}}"><div class="home_article__el__title  container--paddings" >{{p_art.title}}</div></a>
+					<div class="home_article__el__timeadded container--paddings">🕐 {{p_art.time_added|date:"d.m.Y"}}</div>
+					<div class="row_container">
+						<div class="home_article__el__likes row_container container--paddings image">
+							<img src="{% static 'Viewer/img/heart.webp' %}" alt="{% trans "сердце" %}">
+							<div>{{p_art.likes}}</div>
+						</div>
+						<div class="home_article__el__shares row_container container--paddings image">
+							<img src="{% static 'Viewer/img/share.webp' %}" alt="{% trans "поделиться" %}">
+							<div>{{p_art.shares}}</div>
+						</div>
+						<div class="home_article__el__views row_container container--paddings image">
+							<img src="{% static 'Viewer/img/eye.webp' %}" alt="{% trans "глаз" %}">
+							<div>{{p_art.views}}</div>
+						</div>
+					</div>
+					<a class="link" href="{{p_art.get_absolute_url}}"><div class="container--paddings home_article__el__read">{% trans "➲ Читать" %}</div></a>
 				</div>
+				<div class="circle_container">
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
-
-		<div class="prt5-6 column_container" style="background-image: url('{% static 'Base/img/bg_green.webp' %}');">
-			<div class="prt5 text title column_container_element ">
-				<h2>{% trans "Контакты" %}</h2>
+		<div class="future_articles home_container">
+			<div class="title_name">
+				<h2><b>{% trans "Будущие статьи" %}</b></h1>
 			</div>
-			<div class="prt6 row_container">
-				<ul class="text">
-					<li><a rel="noreferrer noopener nofollow" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=chedrden@gmail.com">ChedrDen@gmail.com</a></li>
-					<li><a rel="noreferrer noopener nofollow" href="https://www.instagram.com/timachedr/">Instagram</a></li>
-					<li><a rel="noreferrer noopener nofollow" href="https://t.me/DmitryChedr">Telegram</a></li>
-				</ul>
+			<div class="home_description">
+				{% blocktrans %}
+				Статьи которые вскоре будут добавлены.
+				Если хотите, что-то предложить свое 
+				прошу оставить сообщение в 
+				{% endblocktrans %}
+				<a class="home_article__el__read" href="{% url 'contacts' %}">{% trans 'Контактах' %}</a>
+			</div>
+			<div class="list">
+				{% for f_art in future_articles %}
+				<li>
+					{{f_art.title}}
+				</li>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
 {% endblock %}
 
-{% block script_block %}
+{% block script %}
     <script src="{% static 'Base/js/home.js' %}"></script>
 {% endblock %}
-
-
-
-<!-- Card template -->
-		<!--<div class="prt6 cards column_container_element row_container">
-			<div class="card row_container_element">
-			  <div class="content">
-				<div class="front">
-					<div>{% trans "Ручная рисовка" %}</div>
-					<img src="{% static 'Base/img/card.webp'%}" alt="">
-				</div>
-				<div class="back">
-					{% blocktrans %}
-					Я знаю сейчас ChatGPT правит балом, но всегда когда я пытаюсь получить то что вижу у себя в голове, он сдаёт,
-					и единственный и самый важный инструмент который у меня всегда был это мои руки
-					{% endblocktrans %}
-				</div>
-			  </div>
-			</div>
-		</div>-->

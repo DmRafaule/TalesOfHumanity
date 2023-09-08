@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Category
+from .models import Article, Category, Message
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -18,5 +18,12 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
 
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'position', 'email', 'time_added')
+    list_display_links = ('name',)
+    search_fields = ('name', 'position', 'email')
+
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Message, MessageAdmin)

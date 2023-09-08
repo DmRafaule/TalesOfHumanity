@@ -1,141 +1,176 @@
-.home{
-	margin: 5% 3% 5% 3%;
-}
-
-ul > li {
-	list-style-type: square;
-	margin-bottom: 10px;
-}
-
-.prt0-1-2{
-	background-repeat: no-repeat no-repeat;
-	background-size: 100% 100%;
-}
-.prt3-4{
-	background-repeat: no-repeat no-repeat;
-	background-size: 100% 100%;
-}
-.prt5-6{
-	background-repeat: no-repeat no-repeat;
-	background-size: 100% 100%;
-}
-
-.prt0, .prt3, .prt5{
-	align-self: end;
-	border-bottom: 2px solid grey;
-}
-
-.prt6{
-	align-self: start;
-}
-
-.text{
-	max-width: 500px;
-	padding:30px;
-	font-size: 26px;
-	text-align: justify;
-}
-
-
 .title{
-	margin-top: 120px;
+	margin: auto;
+	margin-top: 100px;
+	width: 60%;
+	align-items: center;
+	justify-content: center;
+}
+
+.title_logo{
 	padding:30px;
 	padding-left: 60px;
-	text-align: left;
-	font-size: 36px;
+}
+
+.title_logo > img{
+	max-width: 250px;
+}
+
+.title_name, .title_name > h2{
+	margin-top: 60px;
+	padding:30px;
+	text-align: center;
+	font-size: 44px;
+	font-family: 'Bellota', cursive;
+	font-weight: bold;
+}
+
+.title_quote{
+	text-align: center;
+	font-size: 28px;
 	font-family: 'Bellota', cursive;
 }
 
-
-.image{
-	margin: 30px;
+.home_container{
+	margin:auto;
+	margin-top: 200px;
+	width: 85%;
 }
 
-.image + .text{
-	margin-top: 70px;
-	margin-bottom: 70px;
-	max-width: 600px;
+.home_description{
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Bellota', cursive;
+}
+.home_articles__container{
+	margin-top: 25px;
+	align-items: end;
+}
+.home_articles__el--big-container{
+	max-width: 400px;
+}
+.home_articles__el{
+	width: 400px;
+	margin-bottom: 25px;
+	padding:25px;
 }
 
-.image > img{
-	width: 300px;
+.home_article__el__title{
+	font-size: 34px;
+	font-weight: bold;
+	background: #EEF1F6;
+}
+.home_article__el__title:hover{
+	border-bottom: 3px groove #C26247;
+}
+.home_article__el__read{
+	transition: scale 0.4s;
+}
+.home_article__el__read:hover{
+	scale: 1.2;
+	border-bottom: 3px groove #C26247;
+}
+.home_article__el__timeadded{
+}
+.home_article__el__likes{
+}
+.home_article__el__shares{
+}
+.home_article__el__views{
+}
+.home_article__el__image > a > img{
+	width: 100%;
+	height: auto;
+}
+.home_article__el__image{
+	transition: scale 0.4s;
+}
+.home_article__el__image:hover{
+	scale: 1.2;	
+}
+
+.new_articles{
+}
+
+
+.popular_articles{
+
+}
+
+.future_articles{
+
+}
+
+
+.list{
+	display: flex;
+	flex-direction:column;
+	min-width: 200px;
+	padding:30px;
+	font-size: 24px;
+	text-align: justify;
+	align-self: left;
+	line-height: 30px;
+	text-indent: 30px;
+}
+
+.list > li {
+	list-style-type: square;
+	margin-bottom: 10px;
+	margin-left: 30px;
+}
+
+.home_articles__el > img{
+	max-width: 100%;
+	width: 100%;
 	height: auto;
 }
 
 
-/* Card styles */
-.cards{
-	flex-wrap: wrap;
-	justify-content: space-around;
-}
-
-.card {
-  margin-top: 30px;
-  width: 300px;
-  height: 300px;
+.image > img{
+	max-width: 32px;
+	max-height: 32px;
+	margin-right: 5px;
 }
 
 
-.front:hover{
-	background-color: #eae85d;
+.list{
+	display: flex;
+	flex-direction:column;
+	min-width: 200px;
+	padding:30px;
+	font-size: 24px;
+	text-align: justify;
+	align-self: left;
+	line-height: 30px;
+	text-indent: 30px;
 }
 
-.front > img {
-	position: absolute;
-	width:100%;
-	left:0px;
-	top: 0px;
+.list > li {
+	list-style-type: square;
+	margin-bottom: 10px;
+	margin-left: 30px;
 }
 
-.front > div {
-	position: absolute;
-	width:100%;
-	height: 50%;
-	left:0px;
-	top: 0px;
-	align-text: center;
-	margin-top: 50%;
-	z-index: 2;
-	font-weight: 700;
-	font-size: 30px;
+.link{
+	text-decoration: none;
+	color: black;
 }
 
-.content {
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-
-  transition: transform 1s;
-  transform-style: preserve-3d;
+.circle_container{
+	display: flex;
+	flex-direction: column;
+	margin: 5px;
+	width: fit-content;
+	align-self: center;
+	justify-content: center;
+}
+.circle_container:last-child{
+	display: none;
 }
 
-.toFlip{
-  transform: rotateY( 180deg ) ;
-  transition: transform 0.5s;
+.circle{
+	width:8px;
+	height:8px;
+	background: grey;
+	border-radius: 50%;
 }
-
-.toFlip > .front > div {
-	z-index:0;
-}
-
-.front,
-.back {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: white;
-  color: black;
-  padding: 10px;
-  padding: 50px 0;
-  text-align: center;
-  border-radius: 5px;
-  backface-visibility: hidden;
-  transition: background-color 1s;
-}
-
-.back {
-  background: #eae85d;
-  transform: rotateY( 180deg );
-  
-}
-

@@ -1,0 +1,83 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block header %}
+    <link type="text/css" rel="stylesheet" href="{% static 'Base/css/contacts.css' %}"/>
+	<link rel="canonical" href="https://historiesofhumanity.com{%url 'contacts'%}" />
+	<meta name="description" content="{% trans "О том как связаться с автором сайта 'Истории Человечества' и получить обраную связь, для вопросов и предложений." %}">
+	<title>{% translate "Контакты сайта 'Истории Человечества'" %}</title>
+{% endblock %}
+
+{% block body %}
+	<div class="home column_container  container--paddings ">
+		<div id="common-hint" class="form_el__hint common">
+		</div>
+		<div class="title column_container_element">
+			<h1><b>{% trans "Как связаться со мной" %}</b></h1>
+		</div>
+    {% csrf_token %}
+	<div class="form column_container">
+		<div class="form_el__container row_container row_container--wrap">
+			<div class="row_container_element__expanding">
+			</div>
+			<div>
+				<div>
+					{% trans "до 20 букв" %}
+				</div>
+				<div id="name-hint" class="form_el__hint">
+				</div>
+				<input id="name" class="form_el name" type="text" placeholder="{% trans "Твоё имя" %}"></input>
+			</div>
+		</div>
+		<div class="form_el__container row_container row_container--wrap">
+			<div class="row_container_element__expanding">
+			</div>
+			<div>
+				<div>
+					{% trans "до 50 букв" %}
+				</div>
+				<div id="position-hint" class="form_el__hint">
+				</div>
+				<input id="position" class="form_el position" type="text" placeholder="{% trans "Твоя позиция на работе" %}"></input>
+			</div>
+		</div>
+		<div class="form_el__container row_container row_container--wrap">
+			<div class="row_container_element__expanding">
+			</div>
+			<div>
+				<div>
+					{% trans "попрошу настоящий email для обратной связи. Обязательно." %}
+				</div>
+				<div id="email-hint" class="form_el__hint">
+				</div>
+				<input id="email" class="form_el email" type="email" placeholder="{% trans "Электронная почта" %}"></input>
+			</div>
+		</div>
+		<div class="form_el__container row_container row_container--wrap">
+			<div class="row_container_element__expanding">
+			</div>
+			<div>
+				<div>
+					{% trans "немного о себе. Обязательно." %}
+				</div>
+				<div id="about-hint" class="form_el__hint">
+				</div>
+				<textarea id="about-user" class="form_el text" placeholder="{% trans "Твоё сообщение или напиши о себе" %}"></textarea>
+			</div>
+		</div>
+		<div class="form_el__container row_container row_container--wrap ">
+			<div class="row_container_element__expanding">
+			</div>
+			<div class="send_button__container">
+				<div id="send_button" class="form_el send_button">
+					{% trans "Отправить" %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'Base/js/contacts.js' %}"></script>
+{% endblock %}

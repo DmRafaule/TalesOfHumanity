@@ -10,6 +10,7 @@ let isNavigationPathCollapsed = false
 let isSearchToggled = true
 let isMobile = false
 let prevWindowWidth
+let widthToMobile = 900
 
 function CollapseNavigation() {
     isNavigationCollapsed = true
@@ -24,6 +25,8 @@ function CollapseNavigation() {
         let wrapper = document.getElementById('wrapper')
         wrapper.classList.replace('wrapper--mobile','wrapper')
     }
+	document.getElementById('viewer').classList.add('border__bottom_left--sharp')
+	document.getElementById('viewer').classList.add('border__top_left--sharp')
 }
 
 function RiseNavigation() {
@@ -39,6 +42,8 @@ function RiseNavigation() {
         let wrapper = document.getElementById('wrapper')
         wrapper.classList.replace('wrapper','wrapper--mobile')
     }
+	document.getElementById('viewer').classList.remove('border__bottom_left--sharp')
+	document.getElementById('viewer').classList.remove('border__top_left--sharp')
 }
 
 function CollapseNavigationPath() {
@@ -47,6 +52,8 @@ function CollapseNavigationPath() {
     navigationPath.classList.add('navigation_path--hide')
     collapseNavigationPath.classList.add('navigation_path__collapse_button--flip')
     collapseNavigationPath.classList.add('navigation_path__collapse_button--collapsed')
+	document.getElementById('viewer').classList.add('border__top_right--sharp')
+	document.getElementById('viewer').classList.add('border__top_left--sharp')
 }
 
 function RiseNavigationPath() {
@@ -55,6 +62,8 @@ function RiseNavigationPath() {
     navigationPath.classList.remove('navigation_path--hide')
     collapseNavigationPath.classList.remove('navigation_path__collapse_button--flip')
     collapseNavigationPath.classList.remove('navigation_path__collapse_button--collapsed')
+	document.getElementById('viewer').classList.remove('border__top_right--sharp')
+	document.getElementById('viewer').classList.remove('border__top_left--sharp')
 }
 
 function CollapseAll(){
@@ -69,15 +78,18 @@ function RiseAll(){
 
 
 function HideAllFooterButtons(){
-    languageSwitcher.style.display = 'none'
-    collapseAll.style.display = 'none'
-	searcher.style.display = 'none'
+	document.querySelectorAll('.navigation_footer__element').forEach( el =>{
+		el.style.display = 'none'
+	}) 
 }
 
 function RiseAllFooterButtons(){
-    languageSwitcher.style.display = 'block'
-    collapseAll.style.display = 'block'
-	searcher.style.display = 'block'
+	document.querySelectorAll('.navigation_footer__element').forEach( el =>{
+		el.style.display = 'block'
+	}) 
+	document.querySelectorAll('#navigation_footer__language_choise').forEach( el =>{
+		el.style.display = 'none'
+	}) 
 }
 
 function InitSite(){
@@ -100,7 +112,7 @@ function MoveFooterButtonsToTopPane(){
 }
 
 function ResizeSite(isInit){
-    if (window.innerWidth < 810 ){
+    if (window.innerWidth < widthToMobile ){
 		if (!(window.innerWidth == prevWindowWidth) || isInit){
 			console.log("Width does not changed") 
 			isNavigationCollapsed = true;

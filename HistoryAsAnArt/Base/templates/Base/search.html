@@ -2,6 +2,10 @@
 {% load static %}
 {% load i18n %}
 
+{% block header %}
+    <link type="text/css" rel="stylesheet" href="{% static 'Base/css/home.css' %}"/>
+	<title>{% translate "Поисковой результат для " %}{{ searched }}</title>
+{% endblock %}
 
 {% block body %}
 
@@ -15,7 +19,7 @@
 	<div class="search_container search_body">
 		{% for article in foundedAtricles %}
 			<div class="search_container search_body__element">
-				<a href="{{ article.get_absolute_url }}" ><p>{{ article.title }}</p></a>
+				<a class="link" href="{{ article.get_absolute_url }}" ><div>{{ article.title }}</div></a>
 			</div>
 		{% endfor %}
 	</div>

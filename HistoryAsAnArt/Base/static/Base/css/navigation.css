@@ -8,17 +8,21 @@
 }
 
 .collapsing_tree__element{
-  padding-left: 10px;
+  padding-left: 20px;
   cursor: pointer;
   user-select: none;
-  letter-spacing: inherit;
-  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s, -moz-box-shadow 0.3s;
+}
+
+.collapsing_tree__element.collapsing_tree__toggler_header{
+	border-bottom: 0px solid grey;
 }
 
 .collapsing_tree__element:hover{
-  box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
-  -webkit-box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
-  -moz-box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
+	border-bottom: 9px ridge #C26247;
+}
+
+.collapsing_tree__element.collapsing_tree__toggler_header:hover{
+	border-bottom: 0px solid grey;
 }
 
 .collapsing_tree__element > a{
@@ -27,10 +31,16 @@
 }
 
 .collapsing_tree__toggler{
-  padding: 5px;
-  padding-left: 10px;
-  cursor: pointer;
-  user-select: none;
+	padding: 5px;
+	padding-left: 10px;
+	cursor: pointer;
+	user-select: none;
+	border-radius: 20px ;
+	border: 7px groove #232323;
+}
+
+.collapsing_tree__toggler:hover{
+  border: 9px ridge #C26247;
 }
 
 .collapsing_tree__toggler_header{
@@ -38,9 +48,10 @@
 }
 
 .collapsing_tree__toggler_body{
+	padding: 10px;
 }
 
 .collapsing_tree__side_image{
-  width: 16px;
+  width: 32px;
   margin: 5px;
 }

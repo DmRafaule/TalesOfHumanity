@@ -1,18 +1,17 @@
-{% extends 'Base/base.html' %}
+{% extends 'Viewer/viewer.html' %}
 {% load static %}
 {% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
 
-{% block header %}
-    <link type="text/css" rel="stylesheet" href="{% static 'Viewer/css/viewer.css' %}"/>
+{% block header_viewer %}
 	<meta name="description" content="{% trans "Начало великой французской революции 🇫🇷, как казнили Людовика 16 ⚜️иякобинский террор. И приход к власти Наполеона Бонапарта." %}">
 	<title>{% translate "Великая Французская революция 🇫🇷1789-1799. Причины ❱ Ход ❱ Последствия" %}</title>
 {% endblock %}
 
-{% block forviewer_content %}
+{% block body_viewer__content %}
 	<div class="content_tree__toggler">
 		<div  class="content_tree__toggler_header content_tree__element" >
-			<img class="content_tree__side_image" src="{% static 'Base/img/script.webp' %}" alt="{% trans "Свиток" %}">
+			<img class="content_tree__side_image" src="{% static 'Base/img/content.webp' %}" alt="{% trans "Свиток" %}">
+			<img class="content_tree__side_image active" src="{% static 'Base/img/content_close.webp' %}" alt="{% trans "Свиток" %}">
 			<span>{% trans "Содержание" %}</span>
 		</div>
 		<div  class="content_tree__toggler_body active">
@@ -44,7 +43,7 @@
 	</div>
 {% endblock %}
 
-{% block body %}
+{% block body_viewer %}
 	<div class="main_title"> 
 		<h1> {{ article.title }} </h1>
 	</div>
@@ -262,8 +261,4 @@
 	</div>
 
 
-{% endblock %}
-
-{% block script_block %}
-    <script src="{% static 'Viewer/js/viewer.js' %}"></script>
 {% endblock %}

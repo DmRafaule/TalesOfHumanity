@@ -8,6 +8,14 @@
     transition: height 0.5s, padding-left 0.5s;
 	justify-content: right;
 	overflow: hidden;
+	/*
+border-radius: 0px 0px 20px 0px;
+-webkit-border-radius: 0px 0px 20px 0px;
+-moz-border-radius: 0px 0px 20px 0px;
+border-bottom: 7px groove #698BC9;
+border-right: 7px groove #698BC9;
+	*/
+	background: #EEF1F6;
 }
 
 .navigation_path--hide{

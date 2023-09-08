@@ -20,6 +20,7 @@
     left: 0px;
 }
 
+
 .navigation_path__collapse_button{
     transition: top 0.5s;
     margin: 10px;
@@ -36,19 +37,15 @@
 
 
 .button{
+	border-radius: 20px;
+	padding: 10px;
     cursor: pointer;
     scale: 1;
-    transition:  scale 0.5s, box-shadow 0.3s, -webkit-box-shadow 0.3s, -moz-box-shadow 0.3s;
 }
 
 .button:hover{
+	border: 5px groove #c26247;
     cursor: pointer;
-    scale: 1.2;
-    box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
-    -webkit-box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: -6px -3px 6px 1px rgba(0,0,0,0.75);
-}
-.button:active{
 }
 
 
@@ -60,7 +57,7 @@
 }
 
 .button > img:hover{
-    scale: 1.5;
+    scale: 1.1;
 }
 
 
@@ -78,5 +75,27 @@
 }
 
 .button_simple > img:hover{
-    scale: 1.5;
+    scale: 1.25;
+}
+
+.active_button{
+	border: 5px groove #c26247;
+}
+
+@media only screen and (max-width: 900px){
+
+.button > img, .button > a > img {
+    width: 64px;
+    scale: 1;
+    z-index: 1;
+    transition: scale 0.5s;
+}
+
+.button_simple > img{
+    width: 64px;
+    scale: 1;
+    z-index: 1;
+    transition: scale 0.5s;
+}
+
 }

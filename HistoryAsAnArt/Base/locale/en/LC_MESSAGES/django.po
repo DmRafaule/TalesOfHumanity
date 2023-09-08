@@ -1,0 +1,501 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-07 17:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Base/templates/Base/404.html:7
+msgid "Страница не найдена"
+msgstr "Page not found"
+
+#: Base/templates/Base/about.html:8
+msgid ""
+"Об особенностях и краткая информация об сайте 'Истории Человечества' и его "
+"направленности. История 📜 ❱ Сказки ❱ Древние мифы и легенды народов мира."
+msgstr ""
+"About the features and brief information about the site 'History of "
+"Humanity' and itsdirections of development. History 📜 ❱ Fairy tales ❱ "
+"Ancient myths and legends"
+
+#: Base/templates/Base/about.html:9
+msgid "О сайте 'Истории Человечества'"
+msgstr "About site 'Histories of Humanity'"
+
+#: Base/templates/Base/about.html:15
+msgid " О сайте 'Истории Человечества'"
+msgstr "About site 'Histories of Humanity'"
+
+#: Base/templates/Base/about.html:22
+msgid ""
+"\n"
+"\t\t\t\t\t\tПриветствую своих гостей на моём сайте. Вас наверняка "
+"интересует\n"
+"\t\t\t\t\t\tо чём же сайт <b>\"Истории человечества\"</b> и что же вы "
+"найдёте тут ?\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tWelcome my friends, on my site. You probably wondering\n"
+"\t\t\t\t\t\twhat is this site about? <b>\"Histories of Humanity\"</b> and "
+"what you could find here ?\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:32
+msgid ""
+"\n"
+"\t\t\t\t\t\tУсловно наполнение моего сайта можно разделить на следующие "
+"категории:\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tBasicaly content of my site can be devided on categoriessuch "
+"as:\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:38
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t<li>История</li>\n"
+"\t\t\t\t\t\t\t<li>Мифы</li>\n"
+"\t\t\t\t\t\t\t<li>Легенды</li>\n"
+"\t\t\t\t\t\t\t<li>Сказки</li>\n"
+"\t\t\t\t\t\t\t<li>Рассказы</li>\n"
+"\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\t\t<li>History</li>\n"
+"\t\t\t\t\t\t\t<li>Myths</li>\n"
+"\t\t\t\t\t\t\t<li>Legends</li>\n"
+"\t\t\t\t\t\t\t<li>Fairy tales</li>\n"
+"\t\t\t\t\t\t\t<li>Stories</li>\n"
+"\t\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:53
+msgid ""
+"\n"
+"\t\t\t\t\t\tС <b><i>историей</i></b> всё понятно, о том что в "
+"действительности было и подтверждено\n"
+"\t\t\t\t\t\tдокументами или засвидетельственно.\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tWith <b><i>history</i></b> all clear, about what realy was and "
+"confirmed by\n"
+"\t\t\t\t\t\tdocuments.\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:59
+msgid ""
+"\n"
+"\t\t\t\t\t\t<b><i>Легенда</i></b>, чаще всего вымышленная история переданная "
+"в поэтическом \n"
+"\t\t\t\t\t\tключе.\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\t<b><i>Legend</i></b>, most often a fictitious story passed "
+"downin the poetic\n"
+"\t\t\t\t\t\tkey.\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:65
+msgid ""
+"\n"
+"\t\t\t\t\t\t<b><i>Мифы</i></b>, о том как люди воспринимали историю и мир до "
+"того как появилась современное представление истории.\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\t<b><i>Myths</i></b>about how people perceived history and the "
+"world before the modern representation of history emerged.\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:70
+msgid ""
+"\n"
+"\t\t\t\t\t\t<b><i>Сказки</i></b>, полностью вымышленная история, чаще всего "
+"имеющая \n"
+"\t\t\t\t\t\tза собой некую подоплёку.\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\t<b><i>Fairy Tales</i></b>, a completely fictional story, most "
+"often having\n"
+"\t\t\t\t\t\t some background behind it.\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:76
+msgid ""
+"\n"
+"\t\t\t\t\t\t<b><i>Рассказ</i></b>, эту категорию лучшебы назвать городские "
+"легенды и байки, но я люблю понятия, которые не растекаются в своём описании "
+"не больше чем на 1 слово ☺\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\t<b><i>Story</i></b>, this category should better be called "
+"urbanlegends and tales, but I love concepts that do not spread out in their "
+"descriptionno more than 1 word ☺\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:86
+msgid ""
+"\n"
+"\t\t\t\t\t\tДля каждой статьи из любой категории есть как <b>полная</b>\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tFor each article from any category there is both a <b>full</b> "
+"version\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:89
+msgid "Линейка длинная"
+msgstr "Long ruler"
+
+#: Base/templates/Base/about.html:89
+msgid ", так и <b>краткая</b>"
+msgstr ", so as short"
+
+#: Base/templates/Base/about.html:89
+msgid "версия"
+msgstr "version"
+
+#: Base/templates/Base/about.html:92
+msgid ""
+"\n"
+"\t\t\t\t\t\tЭто сделано с упором на то, что в основной массе своей, многий "
+"фольклёр читателю будет не известен, и для того, чтобы читатель понял "
+"понравится ли ему та или иная статья, будет существовать краткая версия для "
+"ознакомления.\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tThis was done with an emphasis on the fact that for the most "
+"partthe folklore will be unknown to the reader, and in order for the reader "
+"to understandif he likes this or that article, there will be a short version "
+"for introduction.\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:97
+msgid ""
+"\n"
+"\t\t\t\t\t\tА также и потому что читателю/гостю будет просто лень читать "
+"больше ☺.\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tAnd also because the reader/guest will be simply too lazy to "
+"readmore ☺.\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:106
+msgid ""
+"\n"
+"\t\t\t\t\t\tКонечно, одним текстом сыт не будешь, поэтому я разбавляю его "
+"<b>картинками</b>, <b>списками</b>, <b>графиками</b>. Для статей "
+"исторической категории, это сделано с целью понять ситуацию и события "
+"вцелом.  Но для сказок, легенд, мифов и рассказов это сделано с целью "
+"подстегнуть воображение читателя.\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tOf course, you won't be satisfied with text alone, so I'm "
+"diluting itby using a <b>pictures</b>, a <b>lists</b>, a <b>graphics</b>. "
+"For articles ofhistorical category, it is done with the aim of understanding "
+"the situation and eventsin general. But for fairy tales, legends, myths and "
+"stories, this is done for the purpose of stimulate the reader's "
+"imagination.\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/about.html:111
+msgid ""
+"Я всегда открыт для предложений и вопросов. Отправить сообщение можно в меню"
+msgstr ""
+"I'm always open to suggestions and questions. You can send a message in the "
+"menu"
+
+#: Base/templates/Base/about.html:111
+msgid "Контакты</a></b>. А ответ ждите по почте."
+msgstr "Contacts</a></b>. The answer will be send by email."
+
+#: Base/templates/Base/about.html:114
+msgid ""
+"\n"
+"\t\t\t\t\t\tПриятного чтения и ознакомления.\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tHave fun reading and exploring.\n"
+"\t\t\t\t\t\t"
+
+#: Base/templates/Base/base.html:5
+msgid "Статьи"
+msgstr "Articles"
+
+#: Base/templates/Base/base.html:20 Base/templates/Base/home.html:20
+msgid "Истории Человечества"
+msgstr "Histories of Humanity"
+
+#: Base/templates/Base/base.html:29 Base/templates/Base/navigation.html:8
+msgid "Кипа свитков"
+msgstr "A bunch of scrolls"
+
+#: Base/templates/Base/base.html:41
+msgid "Вопрос"
+msgstr "Question"
+
+#: Base/templates/Base/base.html:42
+msgid "О сайте"
+msgstr "About site"
+
+#: Base/templates/Base/base.html:46
+msgid "Нарисованный домик"
+msgstr "Painted house"
+
+#: Base/templates/Base/base.html:47
+msgid "Домой"
+msgstr "Home"
+
+#: Base/templates/Base/base.html:51
+msgid "Облако диалога"
+msgstr "Dialogue cloud"
+
+#: Base/templates/Base/base.html:52
+msgid "Контакты"
+msgstr "Contacts"
+
+#: Base/templates/Base/base.html:58
+msgid "Стрелка колапсирования левого меню"
+msgstr "Collapsing arrow for left menu"
+
+#: Base/templates/Base/base.html:69
+msgid "Поиск"
+msgstr "Search"
+
+#: Base/templates/Base/base.html:74
+msgid "Иконка поиска, лупа"
+msgstr "Icon of search, magnifier"
+
+#: Base/templates/Base/base.html:78
+msgid ""
+"Иконка переключения языка, по одной Китайской, Русской и Английской букве"
+msgstr ""
+"Icon for switchin language, one letter for each of Chinese, Russion, English"
+
+#: Base/templates/Base/base.html:81
+msgid "Русский флаг"
+msgstr "Russian flag"
+
+#: Base/templates/Base/base.html:84
+msgid "Английский флаг"
+msgstr "English flag"
+
+#: Base/templates/Base/base.html:88
+msgid "Иконка максимизации главного блока чтения"
+msgstr "Icon for maximizing main block of reading"
+
+#: Base/templates/Base/base.html:95
+msgid "Стрелка колапсирования верхнего меню"
+msgstr "Arrow of collapsing top menu"
+
+#: Base/templates/Base/contacts.html:8
+msgid ""
+"О том как связаться с автором сайта 'Истории Человечества' и получить "
+"обраную связь, для вопросов и предложений."
+msgstr ""
+"On how to contact the author of the 'Histories of Humanity' website and "
+"receivefeedback, for questions and suggestions."
+
+#: Base/templates/Base/contacts.html:9
+msgid "Контакты сайта 'Истории Человечества'"
+msgstr "Contacts of site 'Histories of Humanity'"
+
+#: Base/templates/Base/contacts.html:17
+msgid "Как связаться со мной"
+msgstr "How to contact me"
+
+#: Base/templates/Base/contacts.html:26
+msgid "до 20 букв"
+msgstr "up to 20 letters"
+
+#: Base/templates/Base/contacts.html:30
+msgid "Твоё имя"
+msgstr "Your name"
+
+#: Base/templates/Base/contacts.html:38
+msgid "до 50 букв"
+msgstr "up to 50 letters"
+
+#: Base/templates/Base/contacts.html:42
+msgid "Твоя позиция на работе"
+msgstr "Your position at work"
+
+#: Base/templates/Base/contacts.html:50
+msgid "попрошу настоящий email для обратной связи. Обязательно."
+msgstr "I will ask for a real email for feedback. Required."
+
+#: Base/templates/Base/contacts.html:54
+msgid "Электронная почта"
+msgstr "Email"
+
+#: Base/templates/Base/contacts.html:62
+msgid "немного о себе. Обязательно."
+msgstr "A little bit about yourself. Required."
+
+#: Base/templates/Base/contacts.html:66
+msgid "Твоё сообщение или напиши о себе"
+msgstr "Your message or tell me about yourself"
+
+#: Base/templates/Base/contacts.html:74
+msgid "Отправить"
+msgstr "Send"
+
+#: Base/templates/Base/home.html:8
+msgid ""
+"История 📜 ❱ Сказки для детей и взрослых ❱ Древние мифы и легенды народов "
+"мира. Всё это с картинками 🖼 и графикой 🖌, в краткой и полной форме"
+msgstr ""
+"History 📜 ❱ Fairy tales for children and adults ❱ Ancient myths and "
+"legends. All this with pictures 🖼 and graphics 🖌, in short and complete form"
+
+#: Base/templates/Base/home.html:9
+msgid "История, Сказки, Мифы и Легенды на сайте Истории Человечества"
+msgstr ""
+"History, Fairy Tales, Myths and Legends on the site 'Histories of Humanity'"
+
+#: Base/templates/Base/home.html:16
+msgid "Логотип сайта Истории человечества"
+msgstr "Logo of the site History of Humanity"
+
+#: Base/templates/Base/home.html:23
+msgid "'Мы должны учиться на ошибках наших предков'"
+msgstr "'We must learn from the mistakes of our ancestors'"
+
+#: Base/templates/Base/home.html:29
+msgid "Новые статьи"
+msgstr "New articles"
+
+#: Base/templates/Base/home.html:32
+msgid ""
+"\n"
+"\t\t\t\tНедавно добавленные статьи.\n"
+"\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\tRecently added articles.\n"
+"\t\t\t\t"
+
+#: Base/templates/Base/home.html:40 Base/templates/Base/home.html:69
+msgid "Превью статьи"
+msgstr "Article preview"
+
+#: Base/templates/Base/home.html:46 Base/templates/Base/home.html:87
+msgid "➲ Читать"
+msgstr "➲ Read"
+
+#: Base/templates/Base/home.html:58
+msgid "Популярные статьи"
+msgstr "Popular articles"
+
+#: Base/templates/Base/home.html:61
+msgid ""
+"\n"
+"\t\t\t\tСамые популярные статьи у гостей.\n"
+"\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\tMost popular articles on website.\n"
+"\t\t\t\t"
+
+#: Base/templates/Base/home.html:75
+msgid "сердце"
+msgstr "heart"
+
+#: Base/templates/Base/home.html:79
+msgid "поделиться"
+msgstr "share"
+
+#: Base/templates/Base/home.html:83
+msgid "глаз"
+msgstr "eye"
+
+#: Base/templates/Base/home.html:99
+msgid "Будущие статьи"
+msgstr "Future articles"
+
+#: Base/templates/Base/home.html:102
+msgid ""
+"\n"
+"\t\t\t\tСтатьи которые вскоре будут добавлены.\n"
+"\t\t\t\tЕсли хотите, что-то предложить свое \n"
+"\t\t\t\tпрошу оставить сообщение в \n"
+"\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\tArticles wich soon will be added.\n"
+"\t\t\t\tIf you have any suggetions \n"
+"\t\t\t\tplease leve a message in \n"
+"\t\t\t\t"
+
+#: Base/templates/Base/home.html:107
+msgid "Контактах"
+msgstr "Contacts"
+
+#: Base/templates/Base/navigation.html:20
+msgid "Свиток"
+msgstr "Scroll"
+
+#: Base/templates/Base/search.html:7
+msgid "Поисковой результат для "
+msgstr "Search result for"
+
+#: Base/templates/Base/search.html:14
+msgid "Результаты поиска для: "
+msgstr "Search result for: "
+
+#: Base/templates/Base/search.html:17
+msgid "Найдено совпадений: "
+msgstr "Matches found: "
+
+#: Base/templates/Base/search.html:28
+msgid "Увы, ничего не найдено"
+msgstr "Sorry, nothing found"
+
+#: Base/views.py:106
+msgid "⚠ слишком длинное имя"
+msgstr "⚠ too long name"
+
+#: Base/views.py:110
+msgid "⚠ слишком длинное название"
+msgstr "⚠ too long title"
+
+#: Base/views.py:114 Base/views.py:123
+msgid "⚠ Обязательно"
+msgstr "⚠ Required"
+
+#: Base/views.py:119
+msgid "⚠ неправильный формат"
+msgstr "⚠ wrong format"
+
+#: Base/views.py:127
+msgid "✖ Не могу отправить сообщение"
+msgstr "✖ Can not send message"
+
+#: Base/views.py:129
+msgid "✔ Сообщение успешно отправленно"
+msgstr "✔ Message sent successfully"

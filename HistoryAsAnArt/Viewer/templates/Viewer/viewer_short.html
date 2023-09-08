@@ -1,0 +1,82 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block header %}
+    <link type="text/css" rel="stylesheet" href="{% static 'Viewer/css/viewer.css' %}"/>
+	<link rel="canonical" href="https://historiesofhumanity.com{{ article.get_absolute_url_forShort }}" />
+	{% block header_viewer %}
+	{% endblock %}
+{% endblock %}
+
+
+{% block navigation %}
+{% if article.template_shorter %}
+<div id="navigation_footer__shorter" class="button navigation_footer__element row_container_element container__row--margins">
+	<a href="{{ article.get_absolute_url}}"><img class="content_tree__side_image" src="{% static 'Viewer/img/longer.webp' %}" alt="{% trans "Линейка длинная" %}"></a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+{# statistics and shares/like functionality #}
+<div id="popup_interaction__container" class="popup_interaction__container">
+	<div id="popup_interaction__close" class="popup_interaction__close">
+		<div id="popup_interaction__collapse_button" class="button_simple navigation_footer__collapse_button container__row--margins ">
+			<img src="{% static 'Viewer/img/collapse_popup_interaction.webp' %}" alt="{% trans "Стрелка колапсирования попап со статистикой и пр" %}">
+		</div>
+	</div>
+	<div id="popup_interaction--request" class="popup_interaction--request column_container row_container--wrap container--paddings row_container--align_sa">
+		<div class="row_container popup_el">
+			<div id="popup_likes--counter" class="popup_counter">
+				{{ article.likes }}
+			</div>
+			<div id="popup_likes" class=" button popup_el row_container container--margins">
+				<img src="{% static 'Viewer/img/heart.webp' %}" alt="{% trans "сердце" %}">
+			</div>
+		</div>
+		<div class="row_container popup_el">
+			<div id="popup_viewd--counter" class="popup_counter">
+				{{ article.views }}
+			</div>
+			<div id="popup_viewed" class=" popup_el row_container container--margins">
+				<img src="{% static 'Viewer/img/eye.webp' %}" alt="{% trans "глаз" %}">
+			</div>
+		</div>
+		<div id="popup_shares " class="popup_shares row_container row_container--wrap">
+			<div class="row_container">
+				<div id="popup_shared--counter" class="popup_counter">
+					{{ article.shares }}	
+				</div>
+				<div class="column_container popup_el">
+					<a target="_blank" href="https://twitter.com/intent/tweet?url=https://historiesofhumanity.com{{ article.get_absolute_url }}"><div id="popup_shared--twitter" class="button popup_el row_container container--margins">
+							<img src="{% static 'Viewer/img/twitter.webp' %}" alt="{% trans "twitter лого" %}">
+					</div></a>
+					<a target="_blank" href="http://vk.com/share.php?url=https://twitter.com/intent/tweet?url=https://historiesofhumanity.com{{ article.get_absolute_url }}&title={{article.title}}"><div id="popup_shared--vk" class="button popup_el row_container container--margins">
+							<img src="{% static 'Viewer/img/vk.webp' %}" alt="{% trans "VK лого" %}">
+					</div></a>
+					<a target="_blank" href="https://www.reddit.com/submit?url=https://historiesofhumanity.com{{ article.get_absolute_url }}&title={{article.title}}"><div id="popup_shared--reddit" class="button popup_el row_container container--margins">
+							<img src="{% static 'Viewer/img/reddit.webp' %}" alt="{% trans "reddit лого" %}">
+					</div></a>
+					<a target="_blank" href="https://telegram.me/share/url?url=https://historiesofhumanity.com{{ article.get_absolute_url }}" ><div id="popup_shared--telegram" class="button popup_el row_container container--margins">
+							<img src="{% static 'Viewer/img/telegram.webp' %}" alt="{% trans "telegram лого" %}">
+						<div id="popup_shared--telegram--counter" class="popup_counter">
+						</div>
+					</div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	{% block body_viewer %}
+	{% endblock %}
+	{% block body_viewer__content%}
+	{% endblock %}
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'Viewer/js/viewer.js' %}"></script>
+	{% block script_viewer %}
+	{% endblock %}
+{% endblock %}

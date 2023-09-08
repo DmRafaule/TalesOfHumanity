@@ -5,9 +5,11 @@ from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 # For sitemap
 from django.contrib.sitemaps.views import sitemap
-from Base.models import ArticleSitemap
+from Base.models import ArticleSitemap, StaticSitemap, ArticleShortSitemap
 sitemaps = {
     "articles": ArticleSitemap,
+    "static": StaticSitemap,
+    "articles_short": ArticleShortSitemap,
 }
 
 

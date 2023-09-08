@@ -19,9 +19,7 @@
         <div id="navigation" class="navigation column_container row_container_element container--paddings ">
 			<div class="navigation_title column_container_element container__column--margins "><a href="{% url 'home' %}" ><b>{% translate "Истории Человечества" %}</b></a></div>
             <div class="navigation_body column_container_element__expanding container__column--margins container--paddings ">
-				{% block forviewer_content %}
-				{% endblock %}
-                <div id="articles" class="navigation_body__element container__column--margins">
+                <div id="articles" class="container__column--margins">
                     <!-- START Collapsing tree root -->
                     <div class="collapsing_tree">
                         {% for category in categories %}
@@ -39,11 +37,19 @@
                     </div>
                     <!-- End Collapsing tree root -->
                 </div>
+                <div id="about" class="navigation_body__element container__column--margins">
+                    <img class="collapsing_tree__side_image" src="{% static 'Base/img/about.webp' %}" alt="{% trans "Вопрос" %}">
+					<span><a href="{% url 'about' %}">{% translate "О сайте" %}</a></span>
+                </div>
 
                 <div id="home" class="navigation_body__element container__column--margins">
                     <img class="collapsing_tree__side_image" src="{% static 'Base/img/home.webp' %}" alt="{% trans "Нарисованный домик" %}">
-					{# Link to home #}
 					<span><a href="{% url 'home' %}">{% translate "Домой" %}</a></span>
+                </div>
+
+                <div id="contacts" class="navigation_body__element container__column--margins">
+                    <img class="collapsing_tree__side_image" src="{% static 'Base/img/contacts.webp' %}" alt="{% trans "Облако диалога" %}">
+					<span><a href="{% url 'contacts' %}">{% translate "Контакты" %}</a></span>
                 </div>
             </div>
 			<!-- Place to paste navigation_footer -->
@@ -58,7 +64,7 @@
 				</div>
 				<div class="navigation_footer row_container column_container_element container__column--margins container--paddings ">
 					<!-- START Search field -->
-					<div id="navigation_footer__search__box" class="button row_container_element container__row--margins">
+					<div id="navigation_footer__search__box" class="row_container_element container__row--margins">
 						<form class="search-bar" method=GET action="{% url 'search' %}">
 							<input type="search" placeholder="{% translate "Поиск" %}" name="searched" required maxlength=50 width=100>
 						</form>
@@ -81,13 +87,15 @@
 					<div id="navigation_footer__collapse_all" class="button navigation_footer__element row_container_element container__row--margins">
 						<img src="{% static 'Base/img/maximize.webp' %}" alt="{% trans "Иконка максимизации главного блока чтения" %}">
 					</div>
+					{% block navigation %}
+					{% endblock %}
 				</div>
                 <!--Button to collapse navigation_path element(on top)-->
                 <div id="navigation_path__collapse_button" class="button_simple navigation_path__collapse_button">
                     <img src="{% static 'Base/img/collapse.webp' %}" alt="{% trans "Стрелка колапсирования верхнего меню" %}">
                 </div>
             </div>
-            <div id="viewer"  class="column_container column_container_element__expanding container--paddings">
+            <div id="viewer"  class="viewer column_container column_container_element__expanding container--paddings">
 				<!-- Block of code for apps content -->
                 {% block body %}
                 {% endblock %}
@@ -106,7 +114,7 @@
     <script src="{% static 'Base/js/base.js' %}"></script>
     <script src="{% static 'Base/js/base_server.js' %}"></script>
     <!-- Block of code for apps scripts-->
-    {% block script_block %}
+    {% block script %}
     {% endblock %}
 </body>
 </html>
